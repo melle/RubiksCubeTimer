@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		65D0F239290C68F4005AED55 /* RubiksCubeTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F238290C68F4005AED55 /* RubiksCubeTimerApp.swift */; };
+		65D0F23B290C68F4005AED55 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F23A290C68F4005AED55 /* ContentView.swift */; };
+		65D0F23D290C68F8005AED55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65D0F23C290C68F8005AED55 /* Assets.xcassets */; };
+		65D0F240290C68F9005AED55 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65D0F23F290C68F9005AED55 /* Preview Assets.xcassets */; };
+		65D0F24A290C68F9005AED55 /* RubiksCubeTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F249290C68F9005AED55 /* RubiksCubeTimerTests.swift */; };
+		65D0F254290C68F9005AED55 /* RubiksCubeTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F253290C68F9005AED55 /* RubiksCubeTimerUITests.swift */; };
+		65D0F256290C68F9005AED55 /* RubiksCubeTimerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F255290C68F9005AED55 /* RubiksCubeTimerUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		65D0F246290C68F9005AED55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65D0F22D290C68F4005AED55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65D0F234290C68F4005AED55;
+			remoteInfo = RubiksCubeTimer;
+		};
+		65D0F250290C68F9005AED55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65D0F22D290C68F4005AED55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65D0F234290C68F4005AED55;
+			remoteInfo = RubiksCubeTimer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		65D0F235290C68F4005AED55 /* RubiksCubeTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubiksCubeTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		65D0F238290C68F4005AED55 /* RubiksCubeTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiksCubeTimerApp.swift; sourceTree = "<group>"; };
+		65D0F23A290C68F4005AED55 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		65D0F23C290C68F8005AED55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		65D0F23F290C68F9005AED55 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		65D0F245290C68F9005AED55 /* RubiksCubeTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RubiksCubeTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		65D0F249290C68F9005AED55 /* RubiksCubeTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiksCubeTimerTests.swift; sourceTree = "<group>"; };
+		65D0F24F290C68F9005AED55 /* RubiksCubeTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RubiksCubeTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		65D0F253290C68F9005AED55 /* RubiksCubeTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiksCubeTimerUITests.swift; sourceTree = "<group>"; };
+		65D0F255290C68F9005AED55 /* RubiksCubeTimerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiksCubeTimerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		65D0F232290C68F4005AED55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65D0F242290C68F9005AED55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65D0F24C290C68F9005AED55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		65D0F22C290C68F4005AED55 = {
+			isa = PBXGroup;
+			children = (
+				65D0F237290C68F4005AED55 /* RubiksCubeTimer */,
+				65D0F248290C68F9005AED55 /* RubiksCubeTimerTests */,
+				65D0F252290C68F9005AED55 /* RubiksCubeTimerUITests */,
+				65D0F236290C68F4005AED55 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		65D0F236290C68F4005AED55 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				65D0F235290C68F4005AED55 /* RubiksCubeTimer.app */,
+				65D0F245290C68F9005AED55 /* RubiksCubeTimerTests.xctest */,
+				65D0F24F290C68F9005AED55 /* RubiksCubeTimerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		65D0F237290C68F4005AED55 /* RubiksCubeTimer */ = {
+			isa = PBXGroup;
+			children = (
+				65D0F238290C68F4005AED55 /* RubiksCubeTimerApp.swift */,
+				65D0F23A290C68F4005AED55 /* ContentView.swift */,
+				65D0F23C290C68F8005AED55 /* Assets.xcassets */,
+				65D0F23E290C68F9005AED55 /* Preview Content */,
+			);
+			path = RubiksCubeTimer;
+			sourceTree = "<group>";
+		};
+		65D0F23E290C68F9005AED55 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				65D0F23F290C68F9005AED55 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		65D0F248290C68F9005AED55 /* RubiksCubeTimerTests */ = {
+			isa = PBXGroup;
+			children = (
+				65D0F249290C68F9005AED55 /* RubiksCubeTimerTests.swift */,
+			);
+			path = RubiksCubeTimerTests;
+			sourceTree = "<group>";
+		};
+		65D0F252290C68F9005AED55 /* RubiksCubeTimerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				65D0F253290C68F9005AED55 /* RubiksCubeTimerUITests.swift */,
+				65D0F255290C68F9005AED55 /* RubiksCubeTimerUITestsLaunchTests.swift */,
+			);
+			path = RubiksCubeTimerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		65D0F234290C68F4005AED55 /* RubiksCubeTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65D0F259290C68F9005AED55 /* Build configuration list for PBXNativeTarget "RubiksCubeTimer" */;
+			buildPhases = (
+				65D0F231290C68F4005AED55 /* Sources */,
+				65D0F232290C68F4005AED55 /* Frameworks */,
+				65D0F233290C68F4005AED55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RubiksCubeTimer;
+			productName = RubiksCubeTimer;
+			productReference = 65D0F235290C68F4005AED55 /* RubiksCubeTimer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		65D0F244290C68F9005AED55 /* RubiksCubeTimerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65D0F25C290C68F9005AED55 /* Build configuration list for PBXNativeTarget "RubiksCubeTimerTests" */;
+			buildPhases = (
+				65D0F241290C68F9005AED55 /* Sources */,
+				65D0F242290C68F9005AED55 /* Frameworks */,
+				65D0F243290C68F9005AED55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65D0F247290C68F9005AED55 /* PBXTargetDependency */,
+			);
+			name = RubiksCubeTimerTests;
+			productName = RubiksCubeTimerTests;
+			productReference = 65D0F245290C68F9005AED55 /* RubiksCubeTimerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		65D0F24E290C68F9005AED55 /* RubiksCubeTimerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65D0F25F290C68F9005AED55 /* Build configuration list for PBXNativeTarget "RubiksCubeTimerUITests" */;
+			buildPhases = (
+				65D0F24B290C68F9005AED55 /* Sources */,
+				65D0F24C290C68F9005AED55 /* Frameworks */,
+				65D0F24D290C68F9005AED55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65D0F251290C68F9005AED55 /* PBXTargetDependency */,
+			);
+			name = RubiksCubeTimerUITests;
+			productName = RubiksCubeTimerUITests;
+			productReference = 65D0F24F290C68F9005AED55 /* RubiksCubeTimerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		65D0F22D290C68F4005AED55 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					65D0F234290C68F4005AED55 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					65D0F244290C68F9005AED55 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 65D0F234290C68F4005AED55;
+					};
+					65D0F24E290C68F9005AED55 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 65D0F234290C68F4005AED55;
+					};
+				};
+			};
+			buildConfigurationList = 65D0F230290C68F4005AED55 /* Build configuration list for PBXProject "RubiksCubeTimer" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 65D0F22C290C68F4005AED55;
+			productRefGroup = 65D0F236290C68F4005AED55 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				65D0F234290C68F4005AED55 /* RubiksCubeTimer */,
+				65D0F244290C68F9005AED55 /* RubiksCubeTimerTests */,
+				65D0F24E290C68F9005AED55 /* RubiksCubeTimerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		65D0F233290C68F4005AED55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65D0F240290C68F9005AED55 /* Preview Assets.xcassets in Resources */,
+				65D0F23D290C68F8005AED55 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65D0F243290C68F9005AED55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65D0F24D290C68F9005AED55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		65D0F231290C68F4005AED55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65D0F23B290C68F4005AED55 /* ContentView.swift in Sources */,
+				65D0F239290C68F4005AED55 /* RubiksCubeTimerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65D0F241290C68F9005AED55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65D0F24A290C68F9005AED55 /* RubiksCubeTimerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65D0F24B290C68F9005AED55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65D0F254290C68F9005AED55 /* RubiksCubeTimerUITests.swift in Sources */,
+				65D0F256290C68F9005AED55 /* RubiksCubeTimerUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		65D0F247290C68F9005AED55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65D0F234290C68F4005AED55 /* RubiksCubeTimer */;
+			targetProxy = 65D0F246290C68F9005AED55 /* PBXContainerItemProxy */;
+		};
+		65D0F251290C68F9005AED55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65D0F234290C68F4005AED55 /* RubiksCubeTimer */;
+			targetProxy = 65D0F250290C68F9005AED55 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		65D0F257290C68F9005AED55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		65D0F258290C68F9005AED55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		65D0F25A290C68F9005AED55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RubiksCubeTimer/Preview Content\"";
+				DEVELOPMENT_TEAM = E65TTUGZXU;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.dysternis.tools.RubiksCubeTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		65D0F25B290C68F9005AED55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RubiksCubeTimer/Preview Content\"";
+				DEVELOPMENT_TEAM = E65TTUGZXU;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.dysternis.tools.RubiksCubeTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		65D0F25D290C68F9005AED55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = E65TTUGZXU;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.dysternis.tools.RubiksCubeTimerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RubiksCubeTimer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RubiksCubeTimer";
+			};
+			name = Debug;
+		};
+		65D0F25E290C68F9005AED55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = E65TTUGZXU;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.dysternis.tools.RubiksCubeTimerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RubiksCubeTimer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RubiksCubeTimer";
+			};
+			name = Release;
+		};
+		65D0F260290C68F9005AED55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = E65TTUGZXU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.dysternis.tools.RubiksCubeTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RubiksCubeTimer;
+			};
+			name = Debug;
+		};
+		65D0F261290C68F9005AED55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = E65TTUGZXU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.dysternis.tools.RubiksCubeTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RubiksCubeTimer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		65D0F230290C68F4005AED55 /* Build configuration list for PBXProject "RubiksCubeTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65D0F257290C68F9005AED55 /* Debug */,
+				65D0F258290C68F9005AED55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65D0F259290C68F9005AED55 /* Build configuration list for PBXNativeTarget "RubiksCubeTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65D0F25A290C68F9005AED55 /* Debug */,
+				65D0F25B290C68F9005AED55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65D0F25C290C68F9005AED55 /* Build configuration list for PBXNativeTarget "RubiksCubeTimerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65D0F25D290C68F9005AED55 /* Debug */,
+				65D0F25E290C68F9005AED55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65D0F25F290C68F9005AED55 /* Build configuration list for PBXNativeTarget "RubiksCubeTimerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65D0F260290C68F9005AED55 /* Debug */,
+				65D0F261290C68F9005AED55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 65D0F22D290C68F4005AED55 /* Project object */;
+}
