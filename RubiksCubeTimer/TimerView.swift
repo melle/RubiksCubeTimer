@@ -51,11 +51,9 @@ struct TimerView: View {
         .simultaneousGesture(DragGesture(minimumDistance: 0)
                         .onChanged { state in
                             model.handleButtonPress()
-                            print("DRAG \(state)")
                         }
                         .onEnded { state in
                             model.handleButtonRelease()
-                            print("END \(state)")
                         })
         .onReceive(timer) { _ in
             timeDisplay = model.buttonText

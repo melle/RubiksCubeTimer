@@ -4,9 +4,10 @@ import SwiftUI
 
 @main
 struct RubiksCubeTimerApp: App {
+    let model = TimerModel()
     var body: some Scene {
         WindowGroup {
-            TimerView(model: TimerModel())
+            CubeTabsView(model: model)
         }
     }
 }

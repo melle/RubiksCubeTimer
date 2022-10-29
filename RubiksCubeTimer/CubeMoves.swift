@@ -56,9 +56,8 @@ enum CubeMoves: String, CaseIterable {
         }
         return moves
     }
-    
-    static var randomMovesString: String {
-        print("HUHU")
-        return randomMoves.lazy.map { $0.rawValue }.joined(separator: " ")
+
+    static func string(from: [CubeMoves]) -> String {
+        return from.lazy.map { $0.rawValue }.joined(separator: " ")
     }
 }

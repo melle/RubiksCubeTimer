@@ -10,16 +10,32 @@ enum TimerState {
     case finished
 }
 
-struct TimerModel {   
-    var buttonState: TimerState = .idle
+struct CubeResult: Identifiable, Hashable {
+
+    internal init(time: TimeInterval, date: Date, scramble: [CubeMoves]) {
+        self.time = time
+        self.date = date
+        self.scramble = scramble
+        self.id = UUID()
+    }
+    
+    let time: TimeInterval
+    let date: Date
+    let scramble: [CubeMoves]
+    let id: UUID
+}
+
+class TimerModel {
+    var timerState: TimerState = .idle
     var buttonPressed: Bool = false
     var startTime: Date = .now
     var endTime: Date = .now
     var clockFormatter = DateFormatter()
-    var movesText: String = CubeMoves.randomMovesString
+    var scramble: [CubeMoves] = []
+    var results: [CubeResult] = []
 
     init() {
-        self.buttonState = .idle
+        self.timerState = .idle
         self.buttonPressed = false
         self.startTime = .now
         self.endTime = .now
@@ -28,7 +44,7 @@ struct TimerModel {
     }
     
     var buttonColor: Color {
-        switch buttonState {
+        switch timerState {
         case .idle: return Color.gray
         case .ready: return Color.green
         case .running: return Color.red
@@ -37,7 +53,7 @@ struct TimerModel {
     }
     
     var buttonText: String {
-        switch buttonState {
+        switch timerState {
         case .idle: return "START"
         case .ready: return "READY"
         case .running:
@@ -51,36 +67,55 @@ struct TimerModel {
         }
     }
     
-    mutating func handleButtonPress() {
+    var movesText: String {
+        if scramble.count <= 0 || timerState != .idle {
+            return ""
+        }
+        
+        return CubeMoves.string(from: scramble)
+    }
+    
+    func handleButtonPress() {
         guard buttonPressed == false else { return }
         buttonPressed = true
 
-        switch buttonState {
+        switch timerState {
         case .idle:
-            buttonState = .ready
-            movesText = ""
+            timerState = .ready
+            scramble = CubeMoves.randomMoves
         case .ready:
-            buttonState = .ready
+            timerState = .ready
         case .running:
-            buttonState = .finished
+            timerState = .finished
             endTime = .now
         case .finished:
-            buttonState = .idle
-            movesText = CubeMoves.randomMovesString
+            timerState = .idle
+            scramble = CubeMoves.randomMoves
         }
     }
     
-    mutating func handleButtonRelease() {
+    func handleButtonRelease() {
         guard buttonPressed == true else { return }
         buttonPressed = false
         
-        switch buttonState {
-        case .idle: buttonState = .idle
+        switch timerState {
+        case .idle: timerState = .idle
         case .ready:
-            buttonState = .running
+            timerState = .running
             startTime = .now
-        case .running: buttonState = .running
-        case .finished: buttonState = .finished
+        case .running:
+            timerState = .running
+        case .finished:
+            timerState = .finished
+            saveResult()
         }
+    }
+    
+    func saveResult() {
+        let result = CubeResult(time: endTime.timeIntervalSince1970 - startTime.timeIntervalSince1970,
+                                date: Date.now,
+                                scramble: scramble)
+        results.append(result)
+        print("Results: \(results.map({ res in res.date }))")
     }
 }

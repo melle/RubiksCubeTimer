@@ -16,6 +16,9 @@
 		65D0F256290C68F9005AED55 /* RubiksCubeTimerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F255290C68F9005AED55 /* RubiksCubeTimerUITestsLaunchTests.swift */; };
 		65D0F263290D9FE6005AED55 /* CubeMoves.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F262290D9FE6005AED55 /* CubeMoves.swift */; };
 		65D0F265290DB0D5005AED55 /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F264290DB0D5005AED55 /* TimerModel.swift */; };
+		65D0F267290DB169005AED55 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F266290DB169005AED55 /* HistoryView.swift */; };
+		65D0F269290DB181005AED55 /* CubeTabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F268290DB181005AED55 /* CubeTabsView.swift */; };
+		65D0F26B290DB3B3005AED55 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F26A290DB3B3005AED55 /* ResultsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		65D0F255290C68F9005AED55 /* RubiksCubeTimerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiksCubeTimerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		65D0F262290D9FE6005AED55 /* CubeMoves.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeMoves.swift; sourceTree = "<group>"; };
 		65D0F264290DB0D5005AED55 /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
+		65D0F266290DB169005AED55 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		65D0F268290DB181005AED55 /* CubeTabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeTabsView.swift; sourceTree = "<group>"; };
+		65D0F26A290DB3B3005AED55 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,11 +105,14 @@
 			isa = PBXGroup;
 			children = (
 				65D0F23C290C68F8005AED55 /* Assets.xcassets */,
-				65D0F23A290C68F4005AED55 /* TimerView.swift */,
 				65D0F262290D9FE6005AED55 /* CubeMoves.swift */,
+				65D0F266290DB169005AED55 /* HistoryView.swift */,
 				65D0F23E290C68F9005AED55 /* Preview Content */,
 				65D0F238290C68F4005AED55 /* RubiksCubeTimerApp.swift */,
+				65D0F268290DB181005AED55 /* CubeTabsView.swift */,
 				65D0F264290DB0D5005AED55 /* TimerModel.swift */,
+				65D0F23A290C68F4005AED55 /* TimerView.swift */,
+				65D0F26A290DB3B3005AED55 /* ResultsView.swift */,
 			);
 			path = RubiksCubeTimer;
 			sourceTree = "<group>";
@@ -265,7 +274,10 @@
 			files = (
 				65D0F263290D9FE6005AED55 /* CubeMoves.swift in Sources */,
 				65D0F265290DB0D5005AED55 /* TimerModel.swift in Sources */,
+				65D0F267290DB169005AED55 /* HistoryView.swift in Sources */,
 				65D0F23B290C68F4005AED55 /* TimerView.swift in Sources */,
+				65D0F26B290DB3B3005AED55 /* ResultsView.swift in Sources */,
+				65D0F269290DB181005AED55 /* CubeTabsView.swift in Sources */,
 				65D0F239290C68F4005AED55 /* RubiksCubeTimerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
