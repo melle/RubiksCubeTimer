@@ -15,6 +15,7 @@
 		65D0F254290C68F9005AED55 /* RubiksCubeTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F253290C68F9005AED55 /* RubiksCubeTimerUITests.swift */; };
 		65D0F256290C68F9005AED55 /* RubiksCubeTimerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F255290C68F9005AED55 /* RubiksCubeTimerUITestsLaunchTests.swift */; };
 		65D0F263290D9FE6005AED55 /* CubeMoves.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F262290D9FE6005AED55 /* CubeMoves.swift */; };
+		65D0F265290DB0D5005AED55 /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F264290DB0D5005AED55 /* TimerModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		65D0F253290C68F9005AED55 /* RubiksCubeTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiksCubeTimerUITests.swift; sourceTree = "<group>"; };
 		65D0F255290C68F9005AED55 /* RubiksCubeTimerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiksCubeTimerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		65D0F262290D9FE6005AED55 /* CubeMoves.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeMoves.swift; sourceTree = "<group>"; };
+		65D0F264290DB0D5005AED55 /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				65D0F262290D9FE6005AED55 /* CubeMoves.swift */,
 				65D0F23E290C68F9005AED55 /* Preview Content */,
 				65D0F238290C68F4005AED55 /* RubiksCubeTimerApp.swift */,
+				65D0F264290DB0D5005AED55 /* TimerModel.swift */,
 			);
 			path = RubiksCubeTimer;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65D0F263290D9FE6005AED55 /* CubeMoves.swift in Sources */,
+				65D0F265290DB0D5005AED55 /* TimerModel.swift in Sources */,
 				65D0F23B290C68F4005AED55 /* ContentView.swift in Sources */,
 				65D0F239290C68F4005AED55 /* RubiksCubeTimerApp.swift in Sources */,
 			);
