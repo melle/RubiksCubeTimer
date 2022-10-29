@@ -14,6 +14,7 @@
 		65D0F24A290C68F9005AED55 /* RubiksCubeTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F249290C68F9005AED55 /* RubiksCubeTimerTests.swift */; };
 		65D0F254290C68F9005AED55 /* RubiksCubeTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F253290C68F9005AED55 /* RubiksCubeTimerUITests.swift */; };
 		65D0F256290C68F9005AED55 /* RubiksCubeTimerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F255290C68F9005AED55 /* RubiksCubeTimerUITestsLaunchTests.swift */; };
+		65D0F263290D9FE6005AED55 /* CubeMoves.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F262290D9FE6005AED55 /* CubeMoves.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		65D0F24F290C68F9005AED55 /* RubiksCubeTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RubiksCubeTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65D0F253290C68F9005AED55 /* RubiksCubeTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiksCubeTimerUITests.swift; sourceTree = "<group>"; };
 		65D0F255290C68F9005AED55 /* RubiksCubeTimerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiksCubeTimerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		65D0F262290D9FE6005AED55 /* CubeMoves.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeMoves.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +96,11 @@
 		65D0F237290C68F4005AED55 /* RubiksCubeTimer */ = {
 			isa = PBXGroup;
 			children = (
-				65D0F238290C68F4005AED55 /* RubiksCubeTimerApp.swift */,
-				65D0F23A290C68F4005AED55 /* ContentView.swift */,
 				65D0F23C290C68F8005AED55 /* Assets.xcassets */,
+				65D0F23A290C68F4005AED55 /* ContentView.swift */,
+				65D0F262290D9FE6005AED55 /* CubeMoves.swift */,
 				65D0F23E290C68F9005AED55 /* Preview Content */,
+				65D0F238290C68F4005AED55 /* RubiksCubeTimerApp.swift */,
 			);
 			path = RubiksCubeTimer;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65D0F263290D9FE6005AED55 /* CubeMoves.swift in Sources */,
 				65D0F23B290C68F4005AED55 /* ContentView.swift in Sources */,
 				65D0F239290C68F4005AED55 /* RubiksCubeTimerApp.swift in Sources */,
 			);

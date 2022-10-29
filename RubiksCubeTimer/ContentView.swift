@@ -16,6 +16,7 @@ struct TimerModel {
     var startTime: Date = .now
     var endTime: Date = .now
     var clockFormatter = DateFormatter()
+    var movesText: String = CubeMoves.randomMovesString
 
     init() {
         self.buttonState = .idle
@@ -55,12 +56,17 @@ struct TimerModel {
         buttonPressed = true
 
         switch buttonState {
-        case .idle: buttonState = .ready
-        case .ready: buttonState = .ready
+        case .idle:
+            buttonState = .ready
+            movesText = ""
+        case .ready:
+            buttonState = .ready
         case .running:
             buttonState = .finished
             endTime = .now
-        case .finished: buttonState = .idle
+        case .finished:
+            buttonState = .idle
+            movesText = CubeMoves.randomMovesString
         }
     }
     
@@ -84,8 +90,13 @@ struct ContentView: View {
     @State var model: TimerModel
     @State var timeDisplay: String = ""
     let timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
-    let font = Font
+    let clockFont = Font
         .system(size: 36)
+        .bold()
+        .monospaced()
+
+    let movesFont = Font
+        .system(size: 24)
         .bold()
         .monospaced()
 
@@ -95,7 +106,13 @@ struct ContentView: View {
             model.buttonColor
             
             VStack {
-                Spacer()
+                Text(model.movesText)
+                    .font(movesFont)
+                    .foregroundColor(Color.white)
+                    .padding(.vertical, 80)                
+                    .padding(.horizontal)
+                
+
                 Image(systemName: "stopwatch")
                     .imageScale(.large)
                     .foregroundColor(Color.white)
@@ -104,7 +121,7 @@ struct ContentView: View {
                 HStack {
                     Spacer()
                     Text(timeDisplay)
-                        .font(font)
+                        .font(clockFont)
                         .foregroundColor(Color.white)
                     Spacer()
                 }
