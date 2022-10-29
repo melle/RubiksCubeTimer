@@ -15,7 +15,16 @@ struct TimerModel {
     var buttonPressed: Bool = false
     var startTime: Date = .now
     var endTime: Date = .now
+    var clockFormatter = DateFormatter()
 
+    init() {
+        self.buttonState = .idle
+        self.buttonPressed = false
+        self.startTime = .now
+        self.endTime = .now
+        clockFormatter.dateFormat = "HH:mm:ss.SSS"
+        clockFormatter.timeZone = TimeZone(identifier: "GMT")
+    }
     
     var buttonColor: Color {
         switch buttonState {
@@ -31,9 +40,13 @@ struct TimerModel {
         case .idle: return "START"
         case .ready: return "READY"
         case .running:
-            return String(format: "%.3f", Date.now.timeIntervalSinceReferenceDate - startTime.timeIntervalSinceReferenceDate)
+            let duraction = Date.now.timeIntervalSince1970 - startTime.timeIntervalSince1970
+            let date = Date(timeIntervalSince1970: duraction)
+            return clockFormatter.string(from: date)
         case .finished:
-            return String(format: "%.3f", endTime.timeIntervalSinceReferenceDate - startTime.timeIntervalSinceReferenceDate)
+            let duraction = endTime.timeIntervalSince1970 - startTime.timeIntervalSince1970
+            let date = Date(timeIntervalSince1970: duraction)
+            return clockFormatter.string(from: date)
         }
     }
     
@@ -70,7 +83,12 @@ struct ContentView: View {
     
     @State var model: TimerModel
     @State var timeDisplay: String = ""
-    let timer = Timer.publish(every: 0.05, on: .main, in: .common).autoconnect()
+    let timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
+    let font = Font
+        .system(size: 36)
+        .bold()
+        .monospaced()
+
 
     var body: some View {
         ZStack {
@@ -78,18 +96,19 @@ struct ContentView: View {
             
             VStack {
                 Spacer()
+                Image(systemName: "stopwatch")
+                    .imageScale(.large)
+                    .foregroundColor(Color.white)
+                    .font(.largeTitle)
+                    .padding()
                 HStack {
                     Spacer()
-                    Image(systemName: "stopwatch")
-                        .imageScale(.large)
-                        .foregroundColor(Color.white)
-                        .font(.largeTitle)
                     Text(timeDisplay)
-                        .font(.largeTitle)
-                        .bold()
+                        .font(font)
                         .foregroundColor(Color.white)
                     Spacer()
                 }
+                .padding()
                 Spacer()
             }
         }
@@ -112,6 +131,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(model: TimerModel.init(buttonState: .idle))
+        ContentView(model: TimerModel.init())
     }
 }
