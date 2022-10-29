@@ -3,7 +3,7 @@
 import Foundation
 import SwiftUI
 
-enum TimerState {
+enum TimerState: Hashable {
     case idle
     case ready
     case running
@@ -25,12 +25,12 @@ struct CubeResult: Identifiable, Hashable {
     let id: UUID
 }
 
-class TimerModel {
+class TimerModel: ObservableObject {
     var timerState: TimerState = .idle
     var buttonPressed: Bool = false
     var startTime: Date = .now
     var endTime: Date = .now
-    var clockFormatter = DateFormatter()
+    
     var scramble: [CubeMoves] = []
     var results: [CubeResult] = []
 
@@ -39,8 +39,6 @@ class TimerModel {
         self.buttonPressed = false
         self.startTime = .now
         self.endTime = .now
-        clockFormatter.dateFormat = "HH:mm:ss.SSS"
-        clockFormatter.timeZone = TimeZone(identifier: "GMT")
     }
     
     var buttonColor: Color {
@@ -53,6 +51,10 @@ class TimerModel {
     }
     
     var buttonText: String {
+        var clockFormatter = DateFormatter()
+        clockFormatter.dateFormat = "HH:mm:ss.SSS"
+        clockFormatter.timeZone = TimeZone(identifier: "GMT")
+
         switch timerState {
         case .idle: return "START"
         case .ready: return "READY"
@@ -92,6 +94,7 @@ class TimerModel {
             timerState = .idle
             scramble = CubeMoves.randomMoves
         }
+        objectWillChange.send()
     }
     
     func handleButtonRelease() {
@@ -109,6 +112,7 @@ class TimerModel {
             timerState = .finished
             saveResult()
         }
+        objectWillChange.send()
     }
     
     func saveResult() {
@@ -116,6 +120,6 @@ class TimerModel {
                                 date: Date.now,
                                 scramble: scramble)
         results.append(result)
-        print("Results: \(results.map({ res in res.date }))")
+        print("Results: \n\(results.map({ res in "\(res.date) - \(res.time)"  }).joined(separator: "\n"))")
     }
 }
