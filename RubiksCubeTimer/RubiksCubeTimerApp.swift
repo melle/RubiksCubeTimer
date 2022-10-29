@@ -6,7 +6,7 @@ import SwiftUI
 struct RubiksCubeTimerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(model: TimerModel(buttonState: .idle))
         }
     }
 }
