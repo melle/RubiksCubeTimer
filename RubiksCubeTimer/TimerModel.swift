@@ -31,6 +31,7 @@ class TimerModel: ObservableObject {
     var startTime: Date = .now
     var endTime: Date = .now
     let clockFormatter = DateFormatter()
+    let resultDateFormatter = DateFormatter()
     
     var scramble: [CubeMoves] = CubeMoves.randomMoves
     var results: [CubeResult] = []
@@ -44,6 +45,10 @@ class TimerModel: ObservableObject {
         clockFormatter.dateFormat = "HH:mm:ss.SSS"
         clockFormatter.timeZone = TimeZone(identifier: "GMT")
         
+        resultDateFormatter.dateStyle = .medium
+        resultDateFormatter.timeStyle = .medium
+        resultDateFormatter.locale = Locale.current
+
         loadResults()
     }
     
@@ -71,7 +76,12 @@ class TimerModel: ObservableObject {
             return clockFormatter.string(from: date)
         }
     }
-    
+
+    func resultTimeFormatted(from result: CubeResult) -> String {
+        let date = Date(timeIntervalSince1970: result.time)
+        return clockFormatter.string(from: date)
+    }
+
     var movesText: String {
         if scramble.count <= 0 || timerState != .idle {
             return ""
