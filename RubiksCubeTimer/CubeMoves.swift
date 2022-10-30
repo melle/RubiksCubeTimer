@@ -2,7 +2,7 @@
 
 import Foundation
 
-enum CubeMoves: String, CaseIterable {
+enum CubeMoves: String, CaseIterable, Codable {
     case R = "R"
     case Rprime = "R'"
     case R2 = "R2"

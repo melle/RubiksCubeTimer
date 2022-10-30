@@ -10,7 +10,7 @@ enum TimerState: Hashable {
     case finished
 }
 
-struct CubeResult: Identifiable, Hashable {
+struct CubeResult: Identifiable, Hashable, Codable {
 
     internal init(time: TimeInterval, date: Date, scramble: [CubeMoves]) {
         self.time = time
@@ -30,15 +30,21 @@ class TimerModel: ObservableObject {
     var buttonPressed: Bool = false
     var startTime: Date = .now
     var endTime: Date = .now
+    let clockFormatter = DateFormatter()
     
-    var scramble: [CubeMoves] = []
+    var scramble: [CubeMoves] = CubeMoves.randomMoves
     var results: [CubeResult] = []
-
+    
     init() {
         self.timerState = .idle
         self.buttonPressed = false
         self.startTime = .now
         self.endTime = .now
+        
+        clockFormatter.dateFormat = "HH:mm:ss.SSS"
+        clockFormatter.timeZone = TimeZone(identifier: "GMT")
+        
+        loadResults()
     }
     
     var buttonColor: Color {
@@ -51,10 +57,7 @@ class TimerModel: ObservableObject {
     }
     
     var buttonText: String {
-        var clockFormatter = DateFormatter()
-        clockFormatter.dateFormat = "HH:mm:ss.SSS"
-        clockFormatter.timeZone = TimeZone(identifier: "GMT")
-
+        
         switch timerState {
         case .idle: return "START"
         case .ready: return "READY"
@@ -76,6 +79,9 @@ class TimerModel: ObservableObject {
         
         return CubeMoves.string(from: scramble)
     }
+}
+
+extension TimerModel {
     
     func handleButtonPress() {
         guard buttonPressed == false else { return }
@@ -110,12 +116,45 @@ class TimerModel: ObservableObject {
             timerState = .running
         case .finished:
             timerState = .finished
-            saveResult()
+            appendResult()
+            saveResults()
         }
         objectWillChange.send()
     }
     
-    func saveResult() {
+    func saveResults() {
+        guard let blob = try? JSONEncoder().encode(results) else {
+            print("\(#file):\(#line)")
+            return
+        }
+        do {
+            try blob.write(to: resultsURL)
+        }
+        catch {
+            print("\(#file):\(#line) \(error)")
+        }
+    }
+    
+    func loadResults() {
+        do {
+            let blob = try Data(contentsOf: resultsURL)
+            let loadedResults: [CubeResult] = try JSONDecoder().decode([CubeResult].self, from: blob)
+            results = loadedResults
+        }
+        catch {
+            print("\(#file):\(#line) \(error)")
+            results = []
+        }
+    }
+    
+    private var resultsURL: URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        let resultsPath = documentsDirectory.appendingPathComponent("cubeResults.json")
+        return resultsPath
+    }
+    
+    private func appendResult() {
         let result = CubeResult(time: endTime.timeIntervalSince1970 - startTime.timeIntervalSince1970,
                                 date: Date.now,
                                 scramble: scramble)
