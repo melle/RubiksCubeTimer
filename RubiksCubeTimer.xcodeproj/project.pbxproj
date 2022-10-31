@@ -19,6 +19,7 @@
 		65D0F267290DB169005AED55 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F266290DB169005AED55 /* HistoryView.swift */; };
 		65D0F269290DB181005AED55 /* CubeTabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F268290DB181005AED55 /* CubeTabsView.swift */; };
 		65D0F26B290DB3B3005AED55 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F26A290DB3B3005AED55 /* ResultsView.swift */; };
+		65D4E46A29106589008E94E4 /* ResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D4E46929106589008E94E4 /* ResultRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		65D0F266290DB169005AED55 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		65D0F268290DB181005AED55 /* CubeTabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeTabsView.swift; sourceTree = "<group>"; };
 		65D0F26A290DB3B3005AED55 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
+		65D4E46929106589008E94E4 /* ResultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				65D0F264290DB0D5005AED55 /* TimerModel.swift */,
 				65D0F23A290C68F4005AED55 /* TimerView.swift */,
 				65D0F26A290DB3B3005AED55 /* ResultsView.swift */,
+				65D4E46929106589008E94E4 /* ResultRow.swift */,
 			);
 			path = RubiksCubeTimer;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65D0F263290D9FE6005AED55 /* CubeMoves.swift in Sources */,
+				65D4E46A29106589008E94E4 /* ResultRow.swift in Sources */,
 				65D0F265290DB0D5005AED55 /* TimerModel.swift in Sources */,
 				65D0F267290DB169005AED55 /* HistoryView.swift in Sources */,
 				65D0F23B290C68F4005AED55 /* TimerView.swift in Sources */,

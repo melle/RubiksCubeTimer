@@ -45,8 +45,8 @@ class TimerModel: ObservableObject {
         clockFormatter.dateFormat = "HH:mm:ss.SSS"
         clockFormatter.timeZone = TimeZone(identifier: "GMT")
         
-        resultDateFormatter.dateStyle = .medium
-        resultDateFormatter.timeStyle = .medium
+        resultDateFormatter.dateStyle = .short
+        resultDateFormatter.timeStyle = .short
         resultDateFormatter.locale = Locale.current
 
         loadResults()
@@ -157,6 +157,12 @@ extension TimerModel {
         }
     }
     
+    func deleteResult(indexes: IndexSet) {
+        results.remove(atOffsets: indexes)
+        objectWillChange.send()
+        saveResults()
+    }
+    
     private var resultsURL: URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentsDirectory = paths[0]
@@ -169,6 +175,5 @@ extension TimerModel {
                                 date: Date.now,
                                 scramble: scramble)
         results.append(result)
-        print("Results: \n\(results.map({ res in "\(res.date) - \(res.time)"  }).joined(separator: "\n"))")
     }
 }
