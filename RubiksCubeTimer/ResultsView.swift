@@ -5,12 +5,17 @@ import SwiftUI
 struct ResultsView: View {
     @ObservedObject var model: TimerModel
     var body: some View {
-        List {
-            ForEach(model.results, id: \.id) { result in
-                ResultRow(model: model, result: result)
-            }
-            .onDelete { indexes in
-                model.deleteResult(indexes: indexes)
+        VStack {
+            Text("Average: \(model.averageOverallString) seconds")
+                .font(.title)
+            
+            List {
+                ForEach(model.results, id: \.id) { result in
+                    ResultRow(model: model, result: result)
+                }
+                .onDelete { indexes in
+                    model.deleteResult(indexes: indexes)
+                }
             }
         }
     }
