@@ -9,7 +9,7 @@ struct CubeTabsView: View {
         TabView {
             TimerView(model: model)
                 .tabItem {
-                    Label("Timer", systemImage: "stopwatch")
+                    Label("Timer", systemImage: "stopwatch.fill")
                 }
             
             ResultsView(model: model)

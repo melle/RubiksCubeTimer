@@ -36,7 +36,7 @@ struct TimerView: View {
                 
                 Spacer()
                     
-                Image(systemName: "stopwatch")
+                Image(systemName: "stopwatch.fill")
                     .imageScale(.large)
                     .foregroundColor(Color.white)
                     .font(.largeTitle)
@@ -57,11 +57,9 @@ struct TimerView: View {
         .padding(15)
         .simultaneousGesture(DragGesture(minimumDistance: 0)
             .onChanged { state in
-                print("onChanged \(state)")
                 model.handleButtonPress()
             }
             .onEnded { state in
-                print("onEnded \(state)")
                 model.handleButtonRelease()
             }
         )
