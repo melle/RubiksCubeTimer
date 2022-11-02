@@ -93,6 +93,21 @@ class TimerModel: ObservableObject {
 
 extension TimerModel {
     
+    var averageOverall: TimeInterval? {
+        guard results.count > 0 else { return nil }
+        
+        let time: TimeInterval = results.map({ $0.time }).reduce(0, +) / Double(results.count)
+        return time
+    }
+    
+    var averageOverallString: String {
+        guard let time = averageOverall else { return "" }
+        return String(format: "%.3f", time)
+    }
+}
+
+extension TimerModel {
+    
     func handleButtonPress() {
         guard buttonPressed == false else { return }
         buttonPressed = true
