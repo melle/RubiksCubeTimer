@@ -84,7 +84,7 @@ class TimerModel: ObservableObject {
 
     var movesText: String {
         if scramble.count <= 0 || timerState != .idle {
-            return ""
+            return " \n "
         }
         
         return CubeMoves.string(from: scramble)

@@ -51,7 +51,7 @@ enum CubeMoves: String, CaseIterable, Codable {
     
     static var randomMoves: [CubeMoves] {
         var moves: [CubeMoves] = []
-        for _ in 0...13 {
+        for _ in 0...12 {
             moves.append(Self.allCases.randomElement()!) // ok, because we know the collection is not empty
         }
         return moves
