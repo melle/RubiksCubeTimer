@@ -4,7 +4,7 @@ import SwiftUI
 
 struct TimerView: View {
     
-    @State var model: TimerModel
+    @ObservedObject var model: TimerModel
     @State var timeDisplay: String = ""
 
     let timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()

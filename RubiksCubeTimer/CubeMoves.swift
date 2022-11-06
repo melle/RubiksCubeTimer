@@ -49,9 +49,9 @@ enum CubeMoves: String, CaseIterable, Codable {
     case Mprime = "M'"
     case M2 = "M2"
     
-    static var randomMoves: [CubeMoves] {
+    static func randomMoves(_ numberOfMoves: UInt) -> [CubeMoves] {
         var moves: [CubeMoves] = []
-        for _ in 0...12 {
+        for _ in 1...numberOfMoves {
             moves.append(Self.allCases.randomElement()!) // ok, because we know the collection is not empty
         }
         return moves

@@ -18,7 +18,7 @@ struct CubeTabsView: View {
                     Label("Results", systemImage: "chart.line.uptrend.xyaxis")
                 }
 
-            Text("Hello, World!")
+            SettingsView(model: model)
                 .tabItem {
                     Label("Settings", systemImage: "gear")
                 }

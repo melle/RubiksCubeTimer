@@ -33,7 +33,9 @@ class TimerModel: ObservableObject {
     let clockFormatter = DateFormatter()
     let resultDateFormatter = DateFormatter()
     
-    var scramble: [CubeMoves] = CubeMoves.randomMoves
+    var movesPerScramble: UInt = 13 
+    
+    var scramble: [CubeMoves] = []
     var results: [CubeResult] = []
     
     init() {
@@ -49,6 +51,13 @@ class TimerModel: ObservableObject {
         resultDateFormatter.timeStyle = .short
         resultDateFormatter.locale = Locale.current
 
+        movesPerScramble = UInt(UserDefaults.standard.integer(forKey: "movesPerScramble"))
+        if movesPerScramble < 13 {
+            movesPerScramble = 13
+        }
+
+        scramble = CubeMoves.randomMoves(movesPerScramble)
+        
         loadResults()
     }
     
@@ -92,6 +101,27 @@ class TimerModel: ObservableObject {
 }
 
 extension TimerModel {
+        
+    func incrementMovesPerScramble() {
+        if movesPerScramble < 18 {
+            movesPerScramble += 1
+            UserDefaults.standard.set(movesPerScramble, forKey: "movesPerScramble")
+            scramble = CubeMoves.randomMoves(movesPerScramble)
+            objectWillChange.send()
+        }
+    }
+
+    func decrementMovesPerScramble() {
+        if movesPerScramble > 13 {
+            movesPerScramble -= 1
+            UserDefaults.standard.set(movesPerScramble, forKey: "movesPerScramble")
+            scramble = CubeMoves.randomMoves(movesPerScramble)
+            objectWillChange.send()
+        }
+    }
+}
+
+extension TimerModel {
     
     var averageOverall: TimeInterval? {
         guard results.count > 0 else { return nil }
@@ -115,7 +145,7 @@ extension TimerModel {
         switch timerState {
         case .idle:
             timerState = .ready
-            scramble = CubeMoves.randomMoves
+            scramble = CubeMoves.randomMoves(movesPerScramble)
         case .ready:
             timerState = .ready
         case .running:
@@ -123,7 +153,7 @@ extension TimerModel {
             endTime = .now
         case .finished:
             timerState = .idle
-            scramble = CubeMoves.randomMoves
+            scramble = CubeMoves.randomMoves(movesPerScramble)
         }
         objectWillChange.send()
     }
