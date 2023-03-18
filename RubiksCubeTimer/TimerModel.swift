@@ -12,17 +12,26 @@ enum TimerState: Hashable {
 
 struct CubeResult: Identifiable, Hashable, Codable {
 
-    internal init(time: TimeInterval, date: Date, scramble: [CubeMoves]) {
+    internal init(time: TimeInterval, date: Date, scramble: [CubeMoves], id: String = UUID().uuidString) {
         self.time = time
         self.date = date
         self.scramble = scramble
-        self.id = UUID()
+        self.id = id
     }
     
     let time: TimeInterval
     let date: Date
     let scramble: [CubeMoves]
-    let id: UUID
+    let id: String
+}
+
+struct GroupedCubeResult: Hashable, Identifiable {
+    let key: String
+    let results: [CubeResult]
+    
+    var id: String {
+        return key
+    }
 }
 
 class TimerModel: ObservableObject {
@@ -32,6 +41,7 @@ class TimerModel: ObservableObject {
     var endTime: Date = .now
     let clockFormatter = DateFormatter()
     let resultDateFormatter = DateFormatter()
+    let resultByWeekFormatter = DateFormatter()
     
     var movesPerScramble: UInt = 13 
     
@@ -51,6 +61,7 @@ class TimerModel: ObservableObject {
         resultDateFormatter.timeStyle = .short
         resultDateFormatter.locale = Locale.current
 
+        resultByWeekFormatter.dateFormat = "Y - w"
         movesPerScramble = UInt(UserDefaults.standard.integer(forKey: "movesPerScramble"))
         if movesPerScramble < 13 {
             movesPerScramble = 13
@@ -133,6 +144,18 @@ extension TimerModel {
     var averageOverallString: String {
         guard let time = averageOverall else { return "" }
         return String(format: "%.3f", time)
+    }
+    
+    var resultsByWeek: Array<GroupedCubeResult> {
+        Dictionary(grouping: results) {
+            return resultByWeekFormatter.string(from: $0.date)            
+        }
+        .map { (key: String, value: [CubeResult]) in
+            GroupedCubeResult(key: key, results: value)
+        }
+        .sorted { lhs, rhs in
+            lhs.key < rhs.key
+        }
     }
 }
 

@@ -1,0 +1,36 @@
+{
+  "configurations" : [
+    {
+      "id" : "CC18A6D3-91E6-4BF6-B688-06039BABBB25",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:RubiksCubeTimer.xcodeproj",
+      "identifier" : "65D0F234290C68F4005AED55",
+      "name" : "RubiksCubeTimer"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:RubiksCubeTimer.xcodeproj",
+        "identifier" : "65D0F244290C68F9005AED55",
+        "name" : "RubiksCubeTimerTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:RubiksCubeTimer.xcodeproj",
+        "identifier" : "65D0F24E290C68F9005AED55",
+        "name" : "RubiksCubeTimerUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
