@@ -6,8 +6,9 @@ struct ResultsView: View {
     @ObservedObject var model: TimerModel
     var body: some View {
         VStack {
+
             Text("Average: \(model.averageOverallString) seconds")
-                .font(.title)
+                .font(.headline)
             
             List {
                 ForEach(model.resultsByWeek, id: \.id) { section in
