@@ -6,7 +6,7 @@ struct SettingsView: View {
     @ObservedObject var model: TimerModel
 
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             Stepper(label: {
                 Text("Moves per scramble:  \(model.movesPerScramble)")
                     .font(.system(size: 18))
@@ -15,6 +15,23 @@ struct SettingsView: View {
             }, onDecrement: {
                 model.decrementMovesPerScramble()
             })
+            .padding()
+            
+            Divider() /* -------------- */
+            
+            #if DEBUG
+            
+            Button(action: {
+                model.generateRandomResults()
+            }, label: {
+                Text("Generate random results")
+            })
+            .padding()
+            
+            Divider() /* -------------- */
+            
+            #endif
+
             Spacer()
         }
         .padding()

@@ -130,6 +130,13 @@ extension TimerModel {
             objectWillChange.send()
         }
     }
+    
+    func generateRandomResults() {
+        results.append(.init(time: .random(in: 0...120),
+                             date: Date.init(timeIntervalSinceNow: TimeInterval.random(in: 0...60*60*24*365)) ,
+                             scramble: []))
+        objectWillChange.send()
+    }
 }
 
 extension TimerModel {
