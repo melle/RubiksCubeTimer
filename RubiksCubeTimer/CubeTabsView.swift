@@ -1,27 +1,46 @@
 // Copyright © 2022 Thomas Mellenthin (privat). All rights reserved.
 
+import Foundation
 import SwiftUI
 
 struct CubeTabsView: View {
-    let model: TimerModel
+    @ObservedObject var model: TimerModel
 
     var body: some View {
-        TabView {
-            TimerView(model: model)
-                .tabItem {
-                    Label("Timer", systemImage: "stopwatch.fill")
-                }
-            
-            ResultsView(model: model)
-                .id(model.results)
-                .tabItem {
-                    Label("Results", systemImage: "chart.line.uptrend.xyaxis")
-                }
+        NavigationStack {
+            TabView {
+                TimerView(model: model)
+                    .tabItem {
+                        Label("Timer", systemImage: "stopwatch.fill")
+                    }
+                    .navigationTitle("Settings")
 
-            SettingsView(model: model)
-                .tabItem {
-                    Label("Settings", systemImage: "gear")
+                ResultsView(model: model)
+                    .tabItem {
+                        Label("Results", systemImage: "chart.line.uptrend.xyaxis")
+                    }
+
+                SettingsView(model: model)
+                    .tabItem {
+                        Label("Settings", systemImage: "gear")
+                    }
+            }
+            .navigationTitle(model.selectedPuzzle.rawValue)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    PuzzlePicker(
+                        categories: model.availablePuzzles,
+                        selectedCategory: $model.selectedPuzzle
+                    )
                 }
+            }
+        }
+        .onAppear {
+            // correct the transparency bug for Tab bars
+            let tabBarAppearance = UITabBarAppearance()
+            tabBarAppearance.configureWithDefaultBackground()
+            UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
         }
     }
 }

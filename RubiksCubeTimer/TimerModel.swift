@@ -10,6 +10,24 @@ enum TimerState: Hashable {
     case finished
 }
 
+enum PuzzleCategory: String, CaseIterable {
+    case cube2x2 = "2 x 2"
+    case cube3x3 = "3 x 3"
+    case cube4x4 = "4 x 4"
+    case cube5x5 = "5 x 5"
+    case cube6x6 = "6 x 6"
+    case cube7x7 = "7 x 7"
+    case cube3x3onehanded = "3 x 3 One-handed"
+    case cube3x3blindfolded = "3 x 3 Blindfolded"
+    case cube4x4blindfolded = "4 x 4 Blindfolded"
+    case cube5x5blindfolded = "5 x 5 Blindfolded"
+    case megaminx = "Megaminx"
+    case pyraminx = "Pyraminx"
+    case skewb = "Skewb"
+    case square1 = "Square-1"
+    case clock = "Clock"
+}
+
 struct CubeResult: Identifiable, Hashable, Codable {
 
     internal init(time: TimeInterval, date: Date, scramble: [CubeMoves], id: String = UUID().uuidString) {
@@ -39,6 +57,8 @@ class TimerModel: ObservableObject {
     var buttonPressed: Bool = false
     var startTime: Date = .now
     var endTime: Date = .now
+    @Published var selectedPuzzle: PuzzleCategory = .cube3x3
+    var availablePuzzles: [PuzzleCategory] = PuzzleCategory.allCases
     let clockFormatter = DateFormatter()
     let resultDateFormatter = DateFormatter()
     let resultByWeekFormatter = DateFormatter()
@@ -118,8 +138,8 @@ extension TimerModel {
             movesPerScramble += 1
             UserDefaults.standard.set(movesPerScramble, forKey: "movesPerScramble")
             scramble = CubeMoves.randomMoves(movesPerScramble)
-            objectWillChange.send()
         }
+        objectWillChange.send()
     }
 
     func decrementMovesPerScramble() {
@@ -127,8 +147,8 @@ extension TimerModel {
             movesPerScramble -= 1
             UserDefaults.standard.set(movesPerScramble, forKey: "movesPerScramble")
             scramble = CubeMoves.randomMoves(movesPerScramble)
-            objectWillChange.send()
         }
+        objectWillChange.send()
     }
     
     func generateRandomResults() {

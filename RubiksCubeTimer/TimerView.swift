@@ -6,7 +6,7 @@ struct TimerView: View {
     
     @ObservedObject var model: TimerModel
     @State var timeDisplay: String = ""
-
+    
     let timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
     
     let clockFont = Font
@@ -24,25 +24,25 @@ struct TimerView: View {
         ZStack {
             model.buttonColor
                 .cornerRadius(15)
-        
+            
             VStack {
                 VStack {
                     Text(model.movesText)
                         .font(movesFont)
                         .foregroundColor(Color.white)
-                        .padding(.top, 80)
+                        .padding(.vertical)
                         .padding(.horizontal)
                 }
                 
                 Spacer()
-                    
+                
                 Image(systemName: "stopwatch.fill")
                     .imageScale(.large)
                     .foregroundColor(Color.white)
                     .font(.largeTitle)
                     .padding()
                 
-
+                
                 HStack {
                     Spacer()
                     Text(timeDisplay)
