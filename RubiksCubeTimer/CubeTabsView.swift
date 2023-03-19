@@ -7,7 +7,7 @@ struct CubeTabsView: View {
     @ObservedObject var model: TimerModel
 
     var body: some View {
-        NavigationStack {
+        NavigationView {
             TabView {
                 TimerView(model: model)
                     .tabItem {
