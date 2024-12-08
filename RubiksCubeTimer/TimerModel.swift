@@ -53,16 +53,10 @@ struct GroupedCubeResult: Hashable, Identifiable {
 
 @available(*, deprecated, message: "Use TimerFeature instead.")
 class TimerModel: ObservableObject {
-    @Published var timerState: TimerFeature.StopwatchState = .idle
-    var buttonPressed: Bool = false
-    var startTime: Date = .now
-    var endTime: Date = .now
-    var manualTime: String = ""
     @Published var timerMode: TimerMode = .timer
     @Published var selectedPuzzle: PuzzleCategory = .cube3x3
     var availablePuzzles: [PuzzleCategory] = PuzzleCategory.allCases
     let clockFormatter = DateFormatter()
-    let resultDateFormatter = DateFormatter()
     let resultByWeekFormatter = DateFormatter()
     
     var movesPerScramble: UInt = 13 
@@ -71,18 +65,10 @@ class TimerModel: ObservableObject {
     @Published var results: [CubeResult] = []
     
     init() {
-        self.timerState = .idle
-        self.buttonPressed = false
-        self.startTime = .now
-        self.endTime = .now
         
         clockFormatter.dateFormat = "HH:mm:ss.SSS"
         clockFormatter.timeZone = TimeZone(identifier: "GMT")
         
-        resultDateFormatter.dateStyle = .short
-        resultDateFormatter.timeStyle = .short
-        resultDateFormatter.locale = Locale.current
-
         resultByWeekFormatter.dateFormat = "Y - w"
         movesPerScramble = UInt(UserDefaults.standard.integer(forKey: "movesPerScramble"))
         if movesPerScramble < 13 {
@@ -93,44 +79,9 @@ class TimerModel: ObservableObject {
         
         loadResults()
     }
-    
-    var buttonColor: Color {
-        switch timerMode {
-        case .manualEntry:
-            return Color.gray
-        case .timer:
-            switch timerState {
-            case .idle: return Color.gray
-            case .ready: return Color.green
-            case .running: return Color.red
-            case .finished: return Color.red
-            }
-        }
-    }
-    
-    var buttonText: String {
-        
-        switch timerState {
-        case .idle: return "START"
-        case .ready: return "READY"
-        case .running:
-            let duraction = Date.now.timeIntervalSince1970 - startTime.timeIntervalSince1970
-            let date = Date(timeIntervalSince1970: duraction)
-            return clockFormatter.string(from: date)
-        case .finished:
-            let duraction = endTime.timeIntervalSince1970 - startTime.timeIntervalSince1970
-            let date = Date(timeIntervalSince1970: duraction)
-            return clockFormatter.string(from: date)
-        }
-    }
-
-    func resultTimeFormatted(from result: CubeResult) -> String {
-        let date = Date(timeIntervalSince1970: result.time)
-        return clockFormatter.string(from: date)
-    }
 
     var movesText: String {
-        if scramble.count <= 0 || timerState != .idle {
+        if scramble.count <= 0 {
             return " \n "
         }
         
@@ -198,46 +149,7 @@ extension TimerModel {
 }
 
 extension TimerModel {
-    
-    func handleButtonPress() {
-        guard buttonPressed == false else { return }
-        buttonPressed = true
-
-        switch timerState {
-        case .idle:
-            timerState = .ready
-            scramble = CubeMoves.randomMoves(movesPerScramble)
-        case .ready:
-            timerState = .ready
-        case .running:
-            timerState = .finished
-            endTime = .now
-        case .finished:
-            timerState = .idle
-            scramble = CubeMoves.randomMoves(movesPerScramble)
-        }
-        objectWillChange.send()
-    }
-    
-    func handleButtonRelease() {
-        guard buttonPressed == true else { return }
-        buttonPressed = false
         
-        switch timerState {
-        case .idle: timerState = .idle
-        case .ready:
-            timerState = .running
-            startTime = .now
-        case .running:
-            timerState = .running
-        case .finished:
-            timerState = .finished
-            appendResult()
-            saveResults()
-        }
-        objectWillChange.send()
-    }
-    
     func saveResults() {
         guard let blob = try? JSONEncoder().encode(results) else {
             print("\(#file):\(#line)")
@@ -275,11 +187,12 @@ extension TimerModel {
         let resultsPath = documentsDirectory.appendingPathComponent("cubeResults.json")
         return resultsPath
     }
-    
-    private func appendResult() {
-        let result = CubeResult(time: endTime.timeIntervalSince1970 - startTime.timeIntervalSince1970,
-                                date: Date.now,
-                                scramble: scramble)
-        results.append(result)
-    }
+
+    // FIXME: save result in TimerFeature
+//    private func appendResult() {
+//        let result = CubeResult(time: endTime.timeIntervalSince1970 - startTime.timeIntervalSince1970,
+//                                date: Date.now,
+//                                scramble: scramble)
+//        results.append(result)
+//    }
 }

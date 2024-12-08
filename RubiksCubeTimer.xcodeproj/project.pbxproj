@@ -16,7 +16,6 @@
 		65D0F24A290C68F9005AED55 /* TimerModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F249290C68F9005AED55 /* TimerModelTests.swift */; };
 		65D0F263290D9FE6005AED55 /* CubeMoves.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F262290D9FE6005AED55 /* CubeMoves.swift */; };
 		65D0F265290DB0D5005AED55 /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F264290DB0D5005AED55 /* TimerModel.swift */; };
-		65D0F267290DB169005AED55 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F266290DB169005AED55 /* HistoryView.swift */; };
 		65D0F269290DB181005AED55 /* AppMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F268290DB181005AED55 /* AppMainView.swift */; };
 		65FE22D129C615AC00279478 /* PuzzlePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FE22D029C615AC00279478 /* PuzzlePicker.swift */; };
 		65FE22D329C7113400279478 /* TimerTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FE22D229C7113400279478 /* TimerTab.swift */; };
@@ -43,7 +42,6 @@
 		65D0F249290C68F9005AED55 /* TimerModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModelTests.swift; sourceTree = "<group>"; };
 		65D0F262290D9FE6005AED55 /* CubeMoves.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeMoves.swift; sourceTree = "<group>"; };
 		65D0F264290DB0D5005AED55 /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
-		65D0F266290DB169005AED55 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		65D0F268290DB181005AED55 /* AppMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMainView.swift; sourceTree = "<group>"; };
 		65FE22CF29C5E53C00279478 /* RubiksCubeTimer.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = RubiksCubeTimer.xctestplan; sourceTree = "<group>"; };
 		65FE22D029C615AC00279478 /* PuzzlePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzlePicker.swift; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 				65D0F262290D9FE6005AED55 /* CubeMoves.swift */,
 				65D0F268290DB181005AED55 /* AppMainView.swift */,
 				6591A1A62913094600927ED6 /* Date+Grouping.swift */,
-				65D0F266290DB169005AED55 /* HistoryView.swift */,
 				65FE22D029C615AC00279478 /* PuzzlePicker.swift */,
 				65D0F238290C68F4005AED55 /* RubiksCubeTimerApp.swift */,
 				65D0F264290DB0D5005AED55 /* TimerModel.swift */,
@@ -237,7 +234,6 @@
 				65D0F265290DB0D5005AED55 /* TimerModel.swift in Sources */,
 				6591A1A72913094600927ED6 /* Date+Grouping.swift in Sources */,
 				658F9ED82D05C34400064720 /* AppFeature.swift in Sources */,
-				65D0F267290DB169005AED55 /* HistoryView.swift in Sources */,
 				65FE22D129C615AC00279478 /* PuzzlePicker.swift in Sources */,
 				65FE22D329C7113400279478 /* TimerTab.swift in Sources */,
 				65D0F269290DB181005AED55 /* AppMainView.swift in Sources */,
