@@ -15,7 +15,6 @@ extension DateProvider {
 
 struct TimerFeatureTests {
     
-
     @Test
     func testTimerFromIdleToFinished() async throws {
         let mainQueue = DispatchQueue.test
@@ -29,8 +28,7 @@ struct TimerFeatureTests {
         await store.send(.stopwatchTouched) {
             $0.stopwatch = .ready
         }
-        
-        await store.receive({ $0 ==  .internal(.updateTimerText) }, timeout: .seconds(1)) {
+        await store.receive(.internal(.updateTimerText)) {
             $0.buttonText = "READY"
         }
 
@@ -39,11 +37,11 @@ struct TimerFeatureTests {
             $0.startDate = Date.init(timeIntervalSince1970: 0)
         }
 
-        await store.receive({ $0 ==  .internal(.startTimer) }, timeout: .seconds(1))
+        await store.receive(.internal(.startTimer))
 
         await mainQueue.advance(by: .milliseconds(16))
         
-        await store.receive({ $0 ==  .internal(.updateTimerText) }, timeout: .seconds(1)) {
+        await store.receive(.internal(.updateTimerText)) {
             $0.buttonText = "00:00:10.000"
             $0.duration = 10.0
         }
@@ -52,9 +50,9 @@ struct TimerFeatureTests {
             $0.stopwatch = .finished
         }
 
-        await store.receive({ $0 ==  .internal(.stopTimer) }, timeout: .seconds(1))
+        await store.receive(.internal(.stopTimer))
 
-        await store.receive({ $0 ==  .internal(.updateTimerText) }, timeout: .seconds(1))
+        await store.receive(.internal(.updateTimerText))
 
         await store.finish()
     }
