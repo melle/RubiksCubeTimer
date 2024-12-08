@@ -1,37 +1,36 @@
 // Copyright © 2022 Thomas Mellenthin (privat). All rights reserved.
 
+import ComposableArchitecture
 import SwiftUI
 
 struct SettingsView: View {
-    @ObservedObject var model: TimerModel
-
+    var store: StoreOf<SettingsFeature>
+    
     var body: some View {
         VStack(alignment: .leading) {
             Stepper(label: {
-                Text("Moves per scramble:  \(model.movesPerScramble)")
+                Text("Moves per scramble:  \(store.movesPerScramble)")
                     .font(.system(size: 18))
             }, onIncrement: {
-                model.incrementMovesPerScramble()
+                store.send(.incrementMovesPerScramble)
             }, onDecrement: {
-                model.decrementMovesPerScramble()
+                store.send(.decrementMovesPerScramble)
             })
             .padding()
             
+#if DEBUG
             Divider() /* -------------- */
             
-            #if DEBUG
-            
             Button(action: {
-                model.generateRandomResults()
+                store.send(.generateRandomResults)
             }, label: {
                 Text("Generate random results")
             })
             .padding()
             
             Divider() /* -------------- */
+#endif
             
-            #endif
-
             Spacer()
         }
         .padding()
@@ -40,6 +39,8 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView(model: .init())
+        SettingsView(store: Store(initialState: SettingsFeature.State(), reducer: {
+            SettingsFeature()
+        }))
     }
 }

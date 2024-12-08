@@ -3,26 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		6556FFED2D0594A800597BE7 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 6556FFEC2D0594A800597BE7 /* ComposableArchitecture */; };
-		6556FFEF2D05951C00597BE7 /* TimerFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6556FFEE2D05951800597BE7 /* TimerFeature.swift */; };
+		6556FFF22D05A2E700597BE7 /* TimerFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6556FFF12D05A2E700597BE7 /* TimerFeatureTests.swift */; };
+		658F9ED82D05C34400064720 /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658F9ED72D05C34000064720 /* AppFeature.swift */; };
 		6591A1A72913094600927ED6 /* Date+Grouping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6591A1A62913094600927ED6 /* Date+Grouping.swift */; };
-		6591A1A929181C2900927ED6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6591A1A829181C2900927ED6 /* SettingsView.swift */; };
 		65D0F239290C68F4005AED55 /* RubiksCubeTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F238290C68F4005AED55 /* RubiksCubeTimerApp.swift */; };
-		65D0F23B290C68F4005AED55 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F23A290C68F4005AED55 /* TimerView.swift */; };
 		65D0F23D290C68F8005AED55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65D0F23C290C68F8005AED55 /* Assets.xcassets */; };
 		65D0F24A290C68F9005AED55 /* TimerModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F249290C68F9005AED55 /* TimerModelTests.swift */; };
-		65D0F254290C68F9005AED55 /* RubiksCubeTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F253290C68F9005AED55 /* RubiksCubeTimerUITests.swift */; };
-		65D0F256290C68F9005AED55 /* RubiksCubeTimerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F255290C68F9005AED55 /* RubiksCubeTimerUITestsLaunchTests.swift */; };
 		65D0F263290D9FE6005AED55 /* CubeMoves.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F262290D9FE6005AED55 /* CubeMoves.swift */; };
 		65D0F265290DB0D5005AED55 /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F264290DB0D5005AED55 /* TimerModel.swift */; };
 		65D0F267290DB169005AED55 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F266290DB169005AED55 /* HistoryView.swift */; };
-		65D0F269290DB181005AED55 /* CubeTabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F268290DB181005AED55 /* CubeTabsView.swift */; };
-		65D0F26B290DB3B3005AED55 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F26A290DB3B3005AED55 /* ResultsView.swift */; };
-		65D4E46A29106589008E94E4 /* ResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D4E46929106589008E94E4 /* ResultRow.swift */; };
+		65D0F269290DB181005AED55 /* AppMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0F268290DB181005AED55 /* AppMainView.swift */; };
 		65FE22D129C615AC00279478 /* PuzzlePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FE22D029C615AC00279478 /* PuzzlePicker.swift */; };
 		65FE22D329C7113400279478 /* TimerTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FE22D229C7113400279478 /* TimerTab.swift */; };
 /* End PBXBuildFile section */
@@ -35,38 +30,32 @@
 			remoteGlobalIDString = 65D0F234290C68F4005AED55;
 			remoteInfo = RubiksCubeTimer;
 		};
-		65D0F250290C68F9005AED55 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 65D0F22D290C68F4005AED55 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 65D0F234290C68F4005AED55;
-			remoteInfo = RubiksCubeTimer;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6556FFEE2D05951800597BE7 /* TimerFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerFeature.swift; sourceTree = "<group>"; };
+		6556FFF12D05A2E700597BE7 /* TimerFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerFeatureTests.swift; sourceTree = "<group>"; };
+		658F9ED72D05C34000064720 /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
 		6591A1A62913094600927ED6 /* Date+Grouping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Grouping.swift"; sourceTree = "<group>"; };
-		6591A1A829181C2900927ED6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		65D0F235290C68F4005AED55 /* RubiksCubeTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubiksCubeTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65D0F238290C68F4005AED55 /* RubiksCubeTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiksCubeTimerApp.swift; sourceTree = "<group>"; };
-		65D0F23A290C68F4005AED55 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		65D0F23C290C68F8005AED55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65D0F245290C68F9005AED55 /* RubiksCubeTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RubiksCubeTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65D0F249290C68F9005AED55 /* TimerModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModelTests.swift; sourceTree = "<group>"; };
-		65D0F24F290C68F9005AED55 /* RubiksCubeTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RubiksCubeTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		65D0F253290C68F9005AED55 /* RubiksCubeTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiksCubeTimerUITests.swift; sourceTree = "<group>"; };
-		65D0F255290C68F9005AED55 /* RubiksCubeTimerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiksCubeTimerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		65D0F262290D9FE6005AED55 /* CubeMoves.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeMoves.swift; sourceTree = "<group>"; };
 		65D0F264290DB0D5005AED55 /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		65D0F266290DB169005AED55 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
-		65D0F268290DB181005AED55 /* CubeTabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeTabsView.swift; sourceTree = "<group>"; };
-		65D0F26A290DB3B3005AED55 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
-		65D4E46929106589008E94E4 /* ResultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultRow.swift; sourceTree = "<group>"; };
+		65D0F268290DB181005AED55 /* AppMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMainView.swift; sourceTree = "<group>"; };
 		65FE22CF29C5E53C00279478 /* RubiksCubeTimer.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = RubiksCubeTimer.xctestplan; sourceTree = "<group>"; };
 		65FE22D029C615AC00279478 /* PuzzlePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzlePicker.swift; sourceTree = "<group>"; };
 		65FE22D229C7113400279478 /* TimerTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTab.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		658F9ED92D05C60C00064720 /* Results */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Results; sourceTree = "<group>"; };
+		658F9EDD2D05C80000064720 /* Settings */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Settings; sourceTree = "<group>"; };
+		658F9EE02D05C80A00064720 /* Timer */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Timer; sourceTree = "<group>"; };
+		658F9EE42D05C80E00064720 /* SideEffects */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SideEffects; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		65D0F232290C68F4005AED55 /* Frameworks */ = {
@@ -84,13 +73,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		65D0F24C290C68F9005AED55 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -100,7 +82,6 @@
 				65FE22CF29C5E53C00279478 /* RubiksCubeTimer.xctestplan */,
 				65D0F237290C68F4005AED55 /* RubiksCubeTimer */,
 				65D0F248290C68F9005AED55 /* RubiksCubeTimerTests */,
-				65D0F252290C68F9005AED55 /* RubiksCubeTimerUITests */,
 				65D0F236290C68F4005AED55 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -110,7 +91,6 @@
 			children = (
 				65D0F235290C68F4005AED55 /* RubiksCubeTimer.app */,
 				65D0F245290C68F9005AED55 /* RubiksCubeTimerTests.xctest */,
-				65D0F24F290C68F9005AED55 /* RubiksCubeTimerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,19 +98,19 @@
 		65D0F237290C68F4005AED55 /* RubiksCubeTimer */ = {
 			isa = PBXGroup;
 			children = (
-				6556FFEE2D05951800597BE7 /* TimerFeature.swift */,
+				658F9ED92D05C60C00064720 /* Results */,
+				658F9EDD2D05C80000064720 /* Settings */,
+				658F9EE42D05C80E00064720 /* SideEffects */,
+				658F9EE02D05C80A00064720 /* Timer */,
+				658F9ED72D05C34000064720 /* AppFeature.swift */,
 				65D0F23C290C68F8005AED55 /* Assets.xcassets */,
 				65D0F262290D9FE6005AED55 /* CubeMoves.swift */,
-				65D0F268290DB181005AED55 /* CubeTabsView.swift */,
+				65D0F268290DB181005AED55 /* AppMainView.swift */,
 				6591A1A62913094600927ED6 /* Date+Grouping.swift */,
 				65D0F266290DB169005AED55 /* HistoryView.swift */,
 				65FE22D029C615AC00279478 /* PuzzlePicker.swift */,
-				65D4E46929106589008E94E4 /* ResultRow.swift */,
-				65D0F26A290DB3B3005AED55 /* ResultsView.swift */,
 				65D0F238290C68F4005AED55 /* RubiksCubeTimerApp.swift */,
-				6591A1A829181C2900927ED6 /* SettingsView.swift */,
 				65D0F264290DB0D5005AED55 /* TimerModel.swift */,
-				65D0F23A290C68F4005AED55 /* TimerView.swift */,
 				65FE22D229C7113400279478 /* TimerTab.swift */,
 			);
 			path = RubiksCubeTimer;
@@ -140,17 +120,9 @@
 			isa = PBXGroup;
 			children = (
 				65D0F249290C68F9005AED55 /* TimerModelTests.swift */,
+				6556FFF12D05A2E700597BE7 /* TimerFeatureTests.swift */,
 			);
 			path = RubiksCubeTimerTests;
-			sourceTree = "<group>";
-		};
-		65D0F252290C68F9005AED55 /* RubiksCubeTimerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				65D0F253290C68F9005AED55 /* RubiksCubeTimerUITests.swift */,
-				65D0F255290C68F9005AED55 /* RubiksCubeTimerUITestsLaunchTests.swift */,
-			);
-			path = RubiksCubeTimerUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +139,12 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				658F9ED92D05C60C00064720 /* Results */,
+				658F9EDD2D05C80000064720 /* Settings */,
+				658F9EE02D05C80A00064720 /* Timer */,
+				658F9EE42D05C80E00064720 /* SideEffects */,
 			);
 			name = RubiksCubeTimer;
 			productName = RubiksCubeTimer;
@@ -191,24 +169,6 @@
 			productReference = 65D0F245290C68F9005AED55 /* RubiksCubeTimerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		65D0F24E290C68F9005AED55 /* RubiksCubeTimerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 65D0F25F290C68F9005AED55 /* Build configuration list for PBXNativeTarget "RubiksCubeTimerUITests" */;
-			buildPhases = (
-				65D0F24B290C68F9005AED55 /* Sources */,
-				65D0F24C290C68F9005AED55 /* Frameworks */,
-				65D0F24D290C68F9005AED55 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				65D0F251290C68F9005AED55 /* PBXTargetDependency */,
-			);
-			name = RubiksCubeTimerUITests;
-			productName = RubiksCubeTimerUITests;
-			productReference = 65D0F24F290C68F9005AED55 /* RubiksCubeTimerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -217,16 +177,12 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1410;
-				LastUpgradeCheck = 1410;
+				LastUpgradeCheck = 1610;
 				TargetAttributes = {
 					65D0F234290C68F4005AED55 = {
 						CreatedOnToolsVersion = 14.1;
 					};
 					65D0F244290C68F9005AED55 = {
-						CreatedOnToolsVersion = 14.1;
-						TestTargetID = 65D0F234290C68F4005AED55;
-					};
-					65D0F24E290C68F9005AED55 = {
 						CreatedOnToolsVersion = 14.1;
 						TestTargetID = 65D0F234290C68F4005AED55;
 					};
@@ -250,7 +206,6 @@
 			targets = (
 				65D0F234290C68F4005AED55 /* RubiksCubeTimer */,
 				65D0F244290C68F9005AED55 /* RubiksCubeTimerTests */,
-				65D0F24E290C68F9005AED55 /* RubiksCubeTimerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -271,13 +226,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		65D0F24D290C68F9005AED55 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -286,17 +234,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				65D0F263290D9FE6005AED55 /* CubeMoves.swift in Sources */,
-				6556FFEF2D05951C00597BE7 /* TimerFeature.swift in Sources */,
-				65D4E46A29106589008E94E4 /* ResultRow.swift in Sources */,
 				65D0F265290DB0D5005AED55 /* TimerModel.swift in Sources */,
 				6591A1A72913094600927ED6 /* Date+Grouping.swift in Sources */,
+				658F9ED82D05C34400064720 /* AppFeature.swift in Sources */,
 				65D0F267290DB169005AED55 /* HistoryView.swift in Sources */,
-				6591A1A929181C2900927ED6 /* SettingsView.swift in Sources */,
-				65D0F23B290C68F4005AED55 /* TimerView.swift in Sources */,
 				65FE22D129C615AC00279478 /* PuzzlePicker.swift in Sources */,
-				65D0F26B290DB3B3005AED55 /* ResultsView.swift in Sources */,
 				65FE22D329C7113400279478 /* TimerTab.swift in Sources */,
-				65D0F269290DB181005AED55 /* CubeTabsView.swift in Sources */,
+				65D0F269290DB181005AED55 /* AppMainView.swift in Sources */,
 				65D0F239290C68F4005AED55 /* RubiksCubeTimerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,16 +249,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6556FFF22D05A2E700597BE7 /* TimerFeatureTests.swift in Sources */,
 				65D0F24A290C68F9005AED55 /* TimerModelTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65D0F24B290C68F9005AED55 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				65D0F254290C68F9005AED55 /* RubiksCubeTimerUITests.swift in Sources */,
-				65D0F256290C68F9005AED55 /* RubiksCubeTimerUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,11 +261,6 @@
 			isa = PBXTargetDependency;
 			target = 65D0F234290C68F4005AED55 /* RubiksCubeTimer */;
 			targetProxy = 65D0F246290C68F9005AED55 /* PBXContainerItemProxy */;
-		};
-		65D0F251290C68F9005AED55 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 65D0F234290C68F4005AED55 /* RubiksCubeTimer */;
-			targetProxy = 65D0F250290C68F9005AED55 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -370,6 +301,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -391,7 +323,8 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_STRICT_CONCURRENCY = "";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -431,6 +364,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -445,7 +379,8 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_STRICT_CONCURRENCY = "";
+				SWIFT_VERSION = 6.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -457,7 +392,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"RubiksCubeTimer/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RubiksCubeTimer/\"";
 				DEVELOPMENT_TEAM = E65TTUGZXU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -467,7 +402,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -488,7 +423,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"RubiksCubeTimer/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RubiksCubeTimer/\"";
 				DEVELOPMENT_TEAM = E65TTUGZXU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -498,7 +433,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -515,13 +450,12 @@
 		65D0F25D290C68F9005AED55 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = E65TTUGZXU;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.dysternis.tools.RubiksCubeTimerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -535,13 +469,12 @@
 		65D0F25E290C68F9005AED55 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = E65TTUGZXU;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.dysternis.tools.RubiksCubeTimerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -549,42 +482,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RubiksCubeTimer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RubiksCubeTimer";
-			};
-			name = Release;
-		};
-		65D0F260290C68F9005AED55 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = E65TTUGZXU;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = de.dysternis.tools.RubiksCubeTimerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = RubiksCubeTimer;
-			};
-			name = Debug;
-		};
-		65D0F261290C68F9005AED55 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = E65TTUGZXU;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = de.dysternis.tools.RubiksCubeTimerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = RubiksCubeTimer;
 			};
 			name = Release;
 		};
@@ -618,15 +515,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		65D0F25F290C68F9005AED55 /* Build configuration list for PBXNativeTarget "RubiksCubeTimerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				65D0F260290C68F9005AED55 /* Debug */,
-				65D0F261290C68F9005AED55 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -634,8 +522,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.17.0;
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

@@ -1,29 +1,41 @@
 // Copyright © 2022 Thomas Mellenthin (privat). All rights reserved.
 
+import ComposableArchitecture
 import SwiftUI
 
 struct ResultsView: View {
-    @ObservedObject var model: TimerModel
+    let store: StoreOf<ResultsFeature>
+    
     var body: some View {
         VStack {
-
-            Text("Average: \(model.averageOverallString) seconds")
+            
+            Text("Average: \(store.averageOverallString) seconds")
                 .font(.headline)
             
             List {
-                ForEach(model.resultsByWeek, id: \.id) { section in
+                ForEach(store.resultsByWeek, id: \.id) { section in
                     Section(content: {
                         ForEach(section.results) { result in
-                            ResultRow(model: model, result: result)
+                            resultRow(result: result)
                         }
                         .onDelete { indexes in
-                            model.deleteResult(indexes: indexes)
+                            store.send(.deleteResult(indexes: indexes))
                         }
                     }, header: {
                         Text(section.key)
                     })
                 }
             }
+        }
+    }
+    
+    private func resultRow(result: CubeResult) -> some View {
+        VStack {
+            Text(result.date.formatted())
+                .font(.caption)
+                .foregroundColor(Color.gray)
+            Text(result.time.formatted())
+                .font(.subheadline)
         }
     }
 }
@@ -43,7 +55,9 @@ struct ResultsView_Previews: PreviewProvider {
     }
     
     static var previews: some View {
-        ResultsView(model: model)
+        ResultsView(store: Store(initialState: ResultsFeature.State(), reducer: {
+            ResultsFeature()
+        }))
     }
 }
 

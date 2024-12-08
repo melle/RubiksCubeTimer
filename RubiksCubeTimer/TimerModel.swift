@@ -3,11 +3,10 @@
 import Foundation
 import SwiftUI
 
-enum TimerState: Hashable {
-    case idle
-    case ready
-    case running
-    case finished
+
+enum TimerMode: String {
+    case timer = "Timer"
+    case manualEntry = "Manual Entry"
 }
 
 enum PuzzleCategory: String, CaseIterable {
@@ -53,10 +52,12 @@ struct GroupedCubeResult: Hashable, Identifiable {
 }
 
 class TimerModel: ObservableObject {
-    var timerState: TimerState = .idle
+    @Published var timerState: TimerFeature.StopwatchState = .idle
     var buttonPressed: Bool = false
     var startTime: Date = .now
     var endTime: Date = .now
+    var manualTime: String = ""
+    @Published var timerMode: TimerMode = .timer
     @Published var selectedPuzzle: PuzzleCategory = .cube3x3
     var availablePuzzles: [PuzzleCategory] = PuzzleCategory.allCases
     let clockFormatter = DateFormatter()
@@ -65,8 +66,8 @@ class TimerModel: ObservableObject {
     
     var movesPerScramble: UInt = 13 
     
-    var scramble: [CubeMoves] = []
-    var results: [CubeResult] = []
+    @Published var scramble: [CubeMoves] = []
+    @Published var results: [CubeResult] = []
     
     init() {
         self.timerState = .idle
@@ -93,11 +94,16 @@ class TimerModel: ObservableObject {
     }
     
     var buttonColor: Color {
-        switch timerState {
-        case .idle: return Color.gray
-        case .ready: return Color.green
-        case .running: return Color.red
-        case .finished: return Color.red
+        switch timerMode {
+        case .manualEntry:
+            return Color.gray
+        case .timer:
+            switch timerState {
+            case .idle: return Color.gray
+            case .ready: return Color.green
+            case .running: return Color.red
+            case .finished: return Color.red
+            }
         }
     }
     
@@ -132,6 +138,10 @@ class TimerModel: ObservableObject {
 }
 
 extension TimerModel {
+    
+    func newScramle() {
+        scramble = CubeMoves.randomMoves(movesPerScramble)
+    }
         
     func incrementMovesPerScramble() {
         if movesPerScramble < 18 {
@@ -199,7 +209,7 @@ extension TimerModel {
         case .ready:
             timerState = .ready
         case .running:
-            timerState = .finished
+            timerState = .finished(measured: 0)
             endTime = .now
         case .finished:
             timerState = .idle
@@ -215,12 +225,12 @@ extension TimerModel {
         switch timerState {
         case .idle: timerState = .idle
         case .ready:
-            timerState = .running
+            timerState = .running(started: .now)
             startTime = .now
         case .running:
-            timerState = .running
+            timerState = .running(started: .now)
         case .finished:
-            timerState = .finished
+            timerState = .finished(measured: 0)
             appendResult()
             saveResults()
         }

@@ -2,6 +2,9 @@
 
 import Foundation
 
+// FIXME: use tnoodle or another official scrambler program
+// FIXME: avoid repetations (L , L -> 2L)
+// FIXME: avoid pairs (R , R' -> no change at all)
 enum CubeMoves: String, CaseIterable, Codable {
     case R = "R"
     case Rprime = "R'"
@@ -21,38 +24,6 @@ enum CubeMoves: String, CaseIterable, Codable {
     case B = "B"
     case Bprime = "B'"
     case B2 = "B2"
-    /*
-     
-     redundant moves
-     
-    case r = "r"
-    case rprime = "r'"
-    case r2 = "r2"
-    case l = "l"
-    case lprime = "l'"
-    case l2 = "l2"
-    case u = "u"
-    case uprime = "u'"
-    case u2 = "u2"
-    case d = "d"
-    case dprime = "d'"
-    case d2 = "d2"
-    case f = "f"
-    case fprime = "f'"
-    case f2 = "f2"
-    case b = "b"
-    case bprime = "b'"
-    case b2 = "b2"
-    case E = "E"
-    case Eprime = "E'"
-    case E2 = "E2"
-    case S = "S"
-    case Sprime = "S'"
-    case S2 = "S2"
-    case M = "M"
-    case Mprime = "M'"
-    case M2 = "M2"
-     */
 
     static func randomMoves(_ numberOfMoves: UInt) -> [CubeMoves] {
         var moves: [CubeMoves] = []
@@ -63,6 +34,6 @@ enum CubeMoves: String, CaseIterable, Codable {
     }
 
     static func string(from: [CubeMoves]) -> String {
-        return from.lazy.map { $0.rawValue }.joined(separator: " ⬩ ")
+        return from.lazy.map { $0.rawValue }.joined(separator: "  ")
     }
 }

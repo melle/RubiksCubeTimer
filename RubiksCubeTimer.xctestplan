@@ -23,13 +23,6 @@
         "identifier" : "65D0F244290C68F9005AED55",
         "name" : "RubiksCubeTimerTests"
       }
-    },
-    {
-      "target" : {
-        "containerPath" : "container:RubiksCubeTimer.xcodeproj",
-        "identifier" : "65D0F24E290C68F9005AED55",
-        "name" : "RubiksCubeTimerUITests"
-      }
     }
   ],
   "version" : 1
