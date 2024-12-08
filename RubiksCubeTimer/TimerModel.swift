@@ -51,6 +51,7 @@ struct GroupedCubeResult: Hashable, Identifiable {
     }
 }
 
+@available(*, deprecated, message: "Use TimerFeature instead.")
 class TimerModel: ObservableObject {
     @Published var timerState: TimerFeature.StopwatchState = .idle
     var buttonPressed: Bool = false
@@ -209,7 +210,7 @@ extension TimerModel {
         case .ready:
             timerState = .ready
         case .running:
-            timerState = .finished(measured: 0)
+            timerState = .finished
             endTime = .now
         case .finished:
             timerState = .idle
@@ -225,12 +226,12 @@ extension TimerModel {
         switch timerState {
         case .idle: timerState = .idle
         case .ready:
-            timerState = .running(started: .now)
+            timerState = .running
             startTime = .now
         case .running:
-            timerState = .running(started: .now)
+            timerState = .running
         case .finished:
-            timerState = .finished(measured: 0)
+            timerState = .finished
             appendResult()
             saveResults()
         }

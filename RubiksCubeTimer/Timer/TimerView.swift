@@ -7,11 +7,6 @@ import SwiftUI
 struct TimerView: View {
     let store: StoreOf<TimerFeature>
     
-    // We need to update the time display very often which would cause a flood of actions.
-    // Instead the timer updates the timeDisplay string which causes the veiw to update.
-    @State private var timeDisplay: String = ""
-    private let timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
-    
     let clockFont = Font
         .system(size: 36)
         .bold()
@@ -34,11 +29,7 @@ struct TimerView: View {
             //            .padding()
             
             timerView()
-            
                 .padding(15)
-                .onReceive(timer) { _ in
-                    timeDisplay = store.buttonText
-                }
         }
     }
     
@@ -72,7 +63,7 @@ struct TimerView: View {
                 
                 HStack {
                     Spacer()
-                    Text(timeDisplay)
+                    Text(store.buttonText)
                         .font(clockFont)
                         .foregroundColor(Color.white)
                     Spacer()

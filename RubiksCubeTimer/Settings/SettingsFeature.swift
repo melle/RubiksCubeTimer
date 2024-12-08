@@ -22,7 +22,7 @@ struct SettingsFeature {
             case .incrementMovesPerScramble:
                 state.movesPerScramble += 1
             case .decrementMovesPerScramble:
-                state.movesPerScramble -= 1
+                state.movesPerScramble = min(state.movesPerScramble - 1, 13)
             case .generateRandomResults:
                 break
             }
