@@ -39,7 +39,7 @@ struct TimerFeatureTests {
 
         await store.receive(.internal(.startTimer))
 
-        await mainQueue.advance(by: .milliseconds(16))
+        await mainQueue.advance(by: .milliseconds(32))
         
         await store.receive(.internal(.updateTimerText)) {
             $0.buttonText = "00:00:10.000"

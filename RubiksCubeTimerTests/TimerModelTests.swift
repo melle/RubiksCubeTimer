@@ -14,7 +14,7 @@ final class TimerModelTests: XCTestCase {
         CubeResult(time: 42, date: Date(timeIntervalSince1970: 1667940331), scramble: [], id: "4"),
         CubeResult(time: 40, date: Date(timeIntervalSince1970: 1668026731), scramble: [], id: "5"),
         CubeResult(time: 38, date: Date(timeIntervalSince1970: 1668113131), scramble: [], id: "6"),
-        // Week 46 - no results
+        // Week 47 - no results
         
         // November 22./23./24. = Week 48
         CubeResult(time: 40, date: Date(timeIntervalSince1970: 1669157131), scramble: [], id: "7"),

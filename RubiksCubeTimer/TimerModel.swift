@@ -61,7 +61,6 @@ class TimerModel: ObservableObject {
     
     var movesPerScramble: UInt = 13 
     
-    @Published var scramble: [CubeMoves] = []
     @Published var results: [CubeResult] = []
     
     init() {
@@ -75,31 +74,17 @@ class TimerModel: ObservableObject {
             movesPerScramble = 13
         }
 
-        scramble = CubeMoves.randomMoves(movesPerScramble)
-        
         loadResults()
-    }
-
-    var movesText: String {
-        if scramble.count <= 0 {
-            return " \n "
-        }
-        
-        return CubeMoves.string(from: scramble)
     }
 }
 
 extension TimerModel {
     
-    func newScramle() {
-        scramble = CubeMoves.randomMoves(movesPerScramble)
-    }
         
     func incrementMovesPerScramble() {
         if movesPerScramble < 18 {
             movesPerScramble += 1
             UserDefaults.standard.set(movesPerScramble, forKey: "movesPerScramble")
-            scramble = CubeMoves.randomMoves(movesPerScramble)
         }
         objectWillChange.send()
     }
@@ -108,7 +93,6 @@ extension TimerModel {
         if movesPerScramble > 13 {
             movesPerScramble -= 1
             UserDefaults.standard.set(movesPerScramble, forKey: "movesPerScramble")
-            scramble = CubeMoves.randomMoves(movesPerScramble)
         }
         objectWillChange.send()
     }

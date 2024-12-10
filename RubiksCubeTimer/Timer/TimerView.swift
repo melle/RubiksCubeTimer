@@ -87,13 +87,7 @@ struct TimerView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var model: TimerModel {
-        let mdl = TimerModel.init()
-        mdl.scramble = CubeMoves.randomMoves(18)
-        return mdl
-    }
-    
+struct ContentView_Previews: PreviewProvider {    
     static var previews: some View {
         TimerView(store: Store(initialState: TimerFeature.State(), reducer: {
             TimerFeature()
