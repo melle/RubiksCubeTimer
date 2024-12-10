@@ -8,6 +8,7 @@ import SwiftUI
 public struct TimerFeature: Sendable {
     @Dependency(\.dateProvider) var dateProvider
     @Dependency(\.mainQueue) var mainQueue
+    @Dependency(\.withRandomNumberGenerator) var withRandomNumberGenerator
 
     enum StopwatchState: Equatable, Hashable {
         /// The App is ready to stop the time
@@ -29,8 +30,11 @@ public struct TimerFeature: Sendable {
         
         var scramble: [CubeMoves] = []
         
-        var movesText: String = ""
         var buttonText: String = "START"
+        
+        var movesText: String {
+            CubeMoves.string(from: scramble)
+        }
     }
 
     public enum Action: Equatable {
@@ -40,7 +44,9 @@ public struct TimerFeature: Sendable {
         case stopwatchTouchReleased
         /// The motion sensor detected a bump (i.e. when a solved cube hits the desk or the user taps the screen).
         case bumpEvent
-        
+        /// Create a new Scramble for the current puzzle
+        case newScramble
+
         case `internal`(Internal)
         
         public enum Internal: Equatable {
@@ -79,7 +85,10 @@ public struct TimerFeature: Sendable {
                 case .finished:
                     // FIXME: report time
                     state.stopwatch = .idle
-                    return .send(.internal(.updateTimerText))
+                    return .concatenate(
+                        .send(.internal(.updateTimerText)),
+                        .send(.newScramble)
+                    )
                 }
                 
             case .stopwatchTouchReleased:
@@ -102,11 +111,13 @@ public struct TimerFeature: Sendable {
                 }
                 state.stopwatch = .finished
                 
+            case .newScramble:
+                state.scramble = newScramble()
+
             case .internal(.startTimer):
                 return .run(operation: { send in
                     // publish 30 times per second the .updateTimerText action
-                    // FIXME: replace .main with async schedulers, fix testing
-                    let timer = mainQueue.timer(interval: .milliseconds(16))
+                    let timer = mainQueue.timer(interval: .milliseconds(32))
                     
                     for await _ in timer {
                         await send(Action.internal(.updateTimerText))
@@ -146,6 +157,14 @@ public struct TimerFeature: Sendable {
         let milliseconds = totalMilliseconds % 1000
         
         return String(format: "%02d:%02d:%02d.%03d", hours, minutes, seconds, milliseconds)
+    }
+    
+    
+    func newScramble() -> [CubeMoves] {
+        withRandomNumberGenerator { randomNumberGenerator in
+            var rng: any RandomNumberGenerator = randomNumberGenerator
+            return CubeMoves.randomMoves(18, rng: &rng)
+        }
     }
 }
 

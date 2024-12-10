@@ -25,10 +25,10 @@ enum CubeMoves: String, CaseIterable, Codable {
     case Bprime = "B'"
     case B2 = "B2"
 
-    static func randomMoves(_ numberOfMoves: UInt) -> [CubeMoves] {
+    static func randomMoves(_ numberOfMoves: UInt, rng: inout any RandomNumberGenerator) -> [CubeMoves] {
         var moves: [CubeMoves] = []
         for _ in 1...numberOfMoves {
-            moves.append(Self.allCases.randomElement()!) // ok, because we know the collection is not empty
+            moves.append(Self.allCases.randomElement(using: &rng)!) // ! is ok, because we know the collection is not empty
         }
         return moves
     }

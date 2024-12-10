@@ -31,6 +31,9 @@ struct TimerView: View {
             timerView()
                 .padding(15)
         }
+        .onAppear {
+            store.send(.newScramble)
+        }
     }
     
     private func scramblesView() -> some View {
