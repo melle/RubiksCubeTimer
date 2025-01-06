@@ -6,12 +6,14 @@ import Foundation
 public struct DateProvider {
     public var startDate: () -> Date
     public var stopDate: () -> Date
+    public var now: () -> Date
 }
 
 extension DateProvider: DependencyKey {
     public static let liveValue = Self(
         startDate: { Date.now },
-        stopDate: { Date.now }
+        stopDate: { Date.now },
+        now: { Date.now }
     )
 }
 

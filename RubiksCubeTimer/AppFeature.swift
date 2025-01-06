@@ -35,6 +35,10 @@ struct AppFeature {
             // Handle AppFeature-specific actions, if any
             switch action {
                 
+            case let .timer(.reportResult(result)):
+                return .send(.results(.addResult(result)))
+            case let .settings(.addResult(result)):
+                return .send(.results(.addResult(result)))
             case .timer(_):
                 break
             case .results(_):

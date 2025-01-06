@@ -2,6 +2,7 @@
 
 import ComposableArchitecture
 import Foundation
+import OSLog
 import SwiftUI
 
 @Reducer
@@ -47,6 +48,8 @@ public struct TimerFeature: Sendable {
         /// Create a new Scramble for the current puzzle
         case newScramble
 
+        case reportResult(CubeResult)
+
         case `internal`(Internal)
         
         public enum Internal: Equatable {
@@ -63,7 +66,7 @@ public struct TimerFeature: Sendable {
     public var body: some ReducerOf<Self> {
         
         Reduce { state, action in
-            print(action)
+            // os_log(.debug, "\(action)")
             switch action {
             case .stopwatchTouched:
                 switch state.stopwatch {
@@ -83,10 +86,11 @@ public struct TimerFeature: Sendable {
                     state.stopwatch = .finished
                     return .send(.internal(.stopTimer))
                 case .finished:
-                    // FIXME: report time
                     state.stopwatch = .idle
+                    let result = CubeResult(time: state.duration, date: dateProvider.now(), scramble: state.scramble)
                     return .concatenate(
                         .send(.internal(.updateTimerText)),
+                        .send(.reportResult(result)),
                         .send(.newScramble)
                     )
                 }
@@ -113,6 +117,10 @@ public struct TimerFeature: Sendable {
                 
             case .newScramble:
                 state.scramble = newScramble()
+
+            case let .reportResult(result):
+                // evaluated in ResultsFeature
+                break
 
             case .internal(.startTimer):
                 return .run(operation: { send in

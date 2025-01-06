@@ -5,7 +5,7 @@ import Foundation
 // FIXME: use tnoodle or another official scrambler program
 // FIXME: avoid repetations (L , L -> 2L)
 // FIXME: avoid pairs (R , R' -> no change at all)
-enum CubeMoves: String, CaseIterable, Codable {
+public enum CubeMoves: String, Hashable, CaseIterable, Codable, Sendable {
     case R = "R"
     case Rprime = "R'"
     case R2 = "R2"
@@ -26,9 +26,11 @@ enum CubeMoves: String, CaseIterable, Codable {
     case B2 = "B2"
 
     static func randomMoves(_ numberOfMoves: UInt, rng: inout any RandomNumberGenerator) -> [CubeMoves] {
+        assert(Self.allCases.count > 0)
         var moves: [CubeMoves] = []
-        for _ in 1...numberOfMoves {
-            moves.append(Self.allCases.randomElement(using: &rng)!) // ! is ok, because we know the collection is not empty
+        while moves.count < numberOfMoves {
+            Self.allCases.randomElement(using: &rng)
+                .map { moves.append($0) }
         }
         return moves
     }
