@@ -37,7 +37,7 @@ struct SettingsFeature {
     
     func generateRandomResult() -> CubeResult {
         .init(time: .random(in: 0...120),
-              date: Date.init(timeIntervalSinceNow: TimeInterval.random(in: 0...60*60*24*365)) ,
+              date: Date.init(timeIntervalSinceNow: TimeInterval.random(in: -60*60*24*365...0)) ,
               scramble: [])
         
     }
