@@ -9,7 +9,8 @@ extension DateProvider {
     public static let testValue = Self(
         // FIXME: use swift-clocks
         startDate: { Date.init(timeIntervalSince1970: 0) },
-        stopDate: { Date.init(timeIntervalSince1970: 10) }
+        stopDate: { Date.init(timeIntervalSince1970: 10) },
+        now: { Date.init(timeIntervalSince1970: 10) }
     )
 }
 
@@ -23,8 +24,9 @@ struct TimerFeatureTests {
         } withDependencies: {
             $0.dateProvider = .testValue
             $0.mainQueue = mainQueue.eraseToAnyScheduler()
+            $0.uuid = .init({ UUID(0) })
         }
-
+       
         await store.send(.stopwatchTouched) {
             $0.stopwatch = .ready
         }
@@ -50,6 +52,16 @@ struct TimerFeatureTests {
             $0.stopwatch = .finished
         }
 
+        await store.receive(
+            .reportResult(
+                CubeResult(
+                    time: 10.0,
+                    date: Date.init(timeIntervalSince1970: 10),
+                    scramble: [],
+                    id: "00000000-0000-0000-0000-000000000000")
+            )
+        )
+        
         await store.receive(.internal(.stopTimer))
 
         await store.receive(.internal(.updateTimerText))

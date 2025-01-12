@@ -10,6 +10,7 @@ public struct TimerFeature: Sendable {
     @Dependency(\.dateProvider) var dateProvider
     @Dependency(\.mainQueue) var mainQueue
     @Dependency(\.withRandomNumberGenerator) var withRandomNumberGenerator
+    @Dependency(\.uuid) var uuid
 
     enum StopwatchState: Equatable, Hashable {
         /// The App is ready to stop the time
@@ -84,13 +85,15 @@ public struct TimerFeature: Sendable {
                         state.duration = dateProvider.stopDate().timeIntervalSince(startDate)
                     }
                     state.stopwatch = .finished
-                    return .send(.internal(.stopTimer))
+                    let result = CubeResult(time: state.duration, date: dateProvider.now(), scramble: state.scramble, id: uuid().uuidString)
+                    return .concatenate(
+                        .send(.reportResult(result)),
+                        .send(.internal(.stopTimer))
+                    )
                 case .finished:
                     state.stopwatch = .idle
-                    let result = CubeResult(time: state.duration, date: dateProvider.now(), scramble: state.scramble)
                     return .concatenate(
                         .send(.internal(.updateTimerText)),
-                        .send(.reportResult(result)),
                         .send(.newScramble)
                     )
                 }
@@ -118,7 +121,7 @@ public struct TimerFeature: Sendable {
             case .newScramble:
                 state.scramble = newScramble()
 
-            case let .reportResult(result):
+            case .reportResult(_):
                 // evaluated in ResultsFeature
                 break
 

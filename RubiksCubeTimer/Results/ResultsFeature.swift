@@ -107,6 +107,7 @@ extension ResultsFeature {
 
     func resultsByWeek(results: [CubeResult], formatter: DateFormatter) -> [GroupedCubeResult] {
         Dictionary(grouping: results) {
+            
             return formatter.string(from: $0.date)
         }
         .map { (key: String, value: [CubeResult]) in

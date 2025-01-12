@@ -4,7 +4,7 @@ import SwiftUI
 
 public struct CubeResult: Identifiable, Hashable, Equatable, Codable, Sendable {
 
-    internal init(time: TimeInterval, date: Date, scramble: [CubeMoves], id: String = UUID().uuidString) {
+    internal init(time: TimeInterval, date: Date, scramble: [CubeMoves], id: String) {
         self.time = time
         self.date = date
         self.scramble = scramble

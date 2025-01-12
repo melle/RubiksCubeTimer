@@ -5,6 +5,7 @@ import Foundation
 
 @Reducer
 struct SettingsFeature {
+    @Dependency(\.uuid) var uuid
     
     @ObservableState
     struct State: Equatable {
