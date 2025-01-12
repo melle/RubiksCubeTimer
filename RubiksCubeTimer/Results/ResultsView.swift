@@ -9,7 +9,7 @@ struct ResultsView: View {
     var body: some View {
         VStack {
             
-            Text("Average: \(store.averageOverallString) seconds")
+            Text(store.averageOverallString)
                 .font(.headline)
             
             List {

@@ -11,7 +11,6 @@ struct ResultsFeature {
     @ObservableState
     struct State: Equatable {
         var results: [CubeResult] = []
-        var resultsByWeek: [GroupedCubeResult] = []
     }
     
     enum Action {
@@ -19,12 +18,6 @@ struct ResultsFeature {
         case saveResults
         case addResult(CubeResult)
         case deleteResult(indexes: IndexSet)
-        
-        case `internal`(Internal)
-        
-        enum Internal {
-            case recalculateGrouping
-        }
     }
     
     var body: some ReducerOf<Self> {
@@ -32,22 +25,17 @@ struct ResultsFeature {
             switch action {
             case .loadResults:
                 state.results = loadResults()
-                return .send(.internal(.recalculateGrouping))
+                return .none
             case .saveResults:
                 saveResults(results: state.results)
             case let .addResult(result):
                 state.results.append(result)
                 saveResults(results: state.results)
-                return .send(.internal(.recalculateGrouping))
+                return .none
             case .deleteResult(indexes: let indexes):
                 state.results.remove(atOffsets: indexes)
                 saveResults(results: state.results)
-                return .send(.internal(.recalculateGrouping))
-            case let .internal(internalAction):
-                switch internalAction {
-                case .recalculateGrouping:
-                    state.resultsByWeek = resultsByWeek(results: state.results, formatter: dateFormatterProvider.resultsFormatter())
-                }
+                return .none
             }
             return .none
         }
@@ -55,7 +43,12 @@ struct ResultsFeature {
 }
 
 extension ResultsFeature.State {
-    
+
+    var dependencies: DependencyValues {
+        @Dependency(\.self) var dependencies
+        return dependencies
+    }
+
     var averageOverall: TimeInterval? {
         guard results.count > 0 else { return nil }
         
@@ -65,9 +58,23 @@ extension ResultsFeature.State {
     
     var averageOverallString: String {
         guard let time = averageOverall else { return "" }
-        return String(format: "%.3f", time)
+        return String(format: "Average: %.3f seconds", time)
     }
     
+    
+    var resultsByWeek: [GroupedCubeResult] {
+        let formatter = dependencies.dateFormatterProvider.resultsFormatter
+        
+        return Dictionary(grouping: results) {
+            return formatter().string(from: $0.date)
+        }
+        .map { (key: String, value: [CubeResult]) in
+            GroupedCubeResult(key: key, results: value)
+        }
+        .sorted { lhs, rhs in
+            lhs.key < rhs.key
+        }
+    }
 }
 
 extension ResultsFeature {
@@ -104,18 +111,4 @@ extension ResultsFeature {
         let documentsDirectory = paths[0]
         return documentsDirectory.appendingPathComponent("cubeResults.json")
     }
-
-    func resultsByWeek(results: [CubeResult], formatter: DateFormatter) -> [GroupedCubeResult] {
-        Dictionary(grouping: results) {
-            
-            return formatter.string(from: $0.date)
-        }
-        .map { (key: String, value: [CubeResult]) in
-            GroupedCubeResult(key: key, results: value)
-        }
-        .sorted { lhs, rhs in
-            lhs.key < rhs.key
-        }
-    }
-
 }
