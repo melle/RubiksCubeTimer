@@ -19,6 +19,10 @@ extension DateFormatterProvider: DependencyKey {
     public static let liveValue = Self(
         resultsFormatter: { _liveValue }
     )
+    
+    public static let testValue = Self(
+        resultsFormatter: { _liveValue }
+    )
 }
 
 extension DependencyValues {

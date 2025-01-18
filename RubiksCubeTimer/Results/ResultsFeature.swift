@@ -69,10 +69,10 @@ extension ResultsFeature.State {
             return formatter().string(from: $0.date)
         }
         .map { (key: String, value: [CubeResult]) in
-            GroupedCubeResult(key: key, results: value)
+            GroupedCubeResult(key: key, results: value.sorted(by: { $0.date > $1.date }))
         }
         .sorted { lhs, rhs in
-            lhs.key < rhs.key
+            lhs.key > rhs.key
         }
     }
 }
