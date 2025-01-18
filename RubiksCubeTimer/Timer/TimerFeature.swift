@@ -35,7 +35,13 @@ public struct TimerFeature: Sendable {
         var buttonText: String = "START"
         
         var movesText: String {
-            CubeMoves.string(from: scramble)
+            // Hide the scramble while the cube is solved (otherwise the
+            // participant could cheat by simply reverting the scramble)
+            switch stopwatch {
+            case .idle, .ready, .finished: CubeMoves.string(from: scramble)
+            case .running: ""
+            }
+            
         }
     }
 
